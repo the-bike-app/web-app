@@ -6,7 +6,7 @@ let apiUrl
 
 const apiUrls = {
   production: 'https://the-bike-app.herokuapp.com/api',
-  development: 'http://localhost:3000/api'
+  development: 'https://the-bike-app.herokuapp.com/api'
 }
 
 if (window.location.hostname === 'localhost') {
