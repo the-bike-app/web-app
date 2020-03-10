@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/shared/Layout'
 
-export default function Items(props) {
-    const { history, match, user, items } = props
+export default function Bikes(props) {
+    const { history, match, user, bikes } = props
     const renderButton = id => {
         if (user) {
             return (
@@ -15,13 +15,13 @@ export default function Items(props) {
         }
     }
 
-    const renderItems = () => {
-        if (items) {
-            return items.map(item => {
+    const renderBikes = () => {
+        if (bikes) {
+            return bikes.map(bike => {
                 return (
-                    <div className="item" key={item._id}>
-                        <h4>{item.title}</h4>
-                        {renderButton(item._id)}
+                    <div className="item" key={bike._id}>
+                        <h4>{bike.title}</h4>
+                        {renderButton(bike._id)}
                     </div>
                 )
             })
@@ -33,18 +33,18 @@ export default function Items(props) {
     if (user) {
         return (
             <Layout>
-                <h4>Items</h4>
-                {!items ? <h3>No Items at this time.</h3> : null}
-                <div className="item-container">{renderItems()}</div>
+                <h4>Bikes</h4>
+                {!bikes ? <h3>No Bikes at this time.</h3> : null}
+                <div className="item-container">{renderBikes()}</div>
             </Layout>
         )
     } else {
         return (
             <div className="landing">
-                <h2>Welcome to the Items App!</h2>
+                <h2>Welcome to the Bikes App!</h2>
                 <div className="main">
-                    {!items ? <h3>No Items at this time.</h3> : null}
-                    <div className="item-container">{renderItems()}</div>
+                    {!bikes ? <h3>No Bikes at this time.</h3> : null}
+                    <div className="item-container">{renderBikes()}</div>
                 </div>
             </div>
         )

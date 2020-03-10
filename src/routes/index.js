@@ -5,17 +5,17 @@ import Landing from '../screens/Landing'
 import SignIn from '../screens/SignIn'
 import SignOut from '../screens/SignOut'
 import SignUp from '../screens/SignUp'
-import Item from '../screens/Item'
-import Items from '../screens/Items'
-import ItemCreate from '../screens/ItemCreate'
-import ItemEdit from '../screens/ItemEdit'
+import Bike from '../screens/Bike'
+import Bikes from '../screens/Bikes'
+import BikeCreate from '../screens/BikeCreate'
+import BikeEdit from '../screens/BikeEdit'
 import AuthenticatedRoute from './AuthenticatedRoute'
-const Routes = ({ user, items, setUser, clearUser, addItem }) => (
+const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
     <Switch>
         <Route
             exact
             path="/"
-            render={props => (user ? <Home /> : <Landing {...props} items={items} />)}
+            render={props => (user ? <Home /> : <Landing {...props} bikes={bikes} />)}
         />
         <Route
             path="/sign-in"
@@ -32,26 +32,26 @@ const Routes = ({ user, items, setUser, clearUser, addItem }) => (
         />
         <AuthenticatedRoute
             exact
-            path="/items"
+            path="/bikes"
             user={user}
-            render={props => <Items {...props} user={user} items={items} />}
+            render={props => <Bikes {...props} user={user} bikes={bikes} />}
         />
         <AuthenticatedRoute
             exact
-            path="/items/:id"
+            path="/bikes/:id"
             user={user}
-            render={props => <Item {...props} />}
+            render={props => <Bike {...props} />}
         />
         <AuthenticatedRoute
             exact
             user={user}
-            path="/items/:id/edit"
-            render={props => <ItemEdit {...props} />}
+            path="/bikes/:id/edit"
+            render={props => <BikeEdit {...props} />}
         />
         <AuthenticatedRoute
             user={user}
             path="/create"
-            render={props => <ItemCreate {...props} addItem={addItem} />}
+            render={props => <BikeCreate {...props} addBike={addBike} />}
         />
     </Switch>
 )

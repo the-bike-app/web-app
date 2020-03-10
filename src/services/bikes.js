@@ -1,6 +1,6 @@
 import api from './apiConfig'
 
-export const getItems = async () => {
+export const getBikes = async () => {
     try {
         const resp = await api.get('/items')
         return resp.data.items
@@ -9,7 +9,7 @@ export const getItems = async () => {
     }
 }
 
-export const getItemById = async id => {
+export const getBikeById = async id => {
     try {
         const resp = await api.get(`/items/${id}`)
         return resp.data.item
@@ -18,9 +18,9 @@ export const getItemById = async id => {
     }
 }
 
-export const createItem = async item => {
+export const createBike = async bike => {
     try {
-        const resp = await api.post('/items', item)
+        const resp = await api.post('/items', bike)
         console.log(resp.data)
         return resp
     } catch (error) {
@@ -28,16 +28,16 @@ export const createItem = async item => {
     }
 }
 
-export const updateItem = async (id, item) => {
+export const updateBike = async (id, bike) => {
     try {
-        const resp = await api.put(`/items/${id}`, item)
+        const resp = await api.put(`/items/${id}`, bike)
         return resp.data
     } catch (error) {
         throw error
     }
 }
 
-export const deleteItem = async id => {
+export const deleteBike = async id => {
     try {
         const resp = await api.delete(`/items/${id}`)
         return resp.data
