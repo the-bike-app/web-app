@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ItemForm = ({
-    item,
+const BikeForm = ({
+    bike,
     handleSubmit,
     handleChange,
     cancelPath,
@@ -11,8 +11,8 @@ const ItemForm = ({
             <form onSubmit={handleSubmit}>
                 <label>Title</label>
                 <input
-                    placeholder='A vetted item.'
-                    value={item.title}
+                    placeholder='A vetted bike.'
+                    value={bike.title}
                     name='title'
                     required
                     onChange={handleChange}
@@ -21,7 +21,7 @@ const ItemForm = ({
                 <label>Link</label>
                 <input
                     placeholder='http://acoolitem.com'
-                    value={item.link}
+                    value={bike.link}
                     name='link'
                     required
                     onChange={handleChange}
@@ -35,4 +35,4 @@ const ItemForm = ({
         </div>
     )
 
-export default ItemForm
+export default BikeForm

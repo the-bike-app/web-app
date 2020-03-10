@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import ItemForm from '../components/shared/ItemForm'
-import { getItemById, updateItem } from '../services/items'
+import BikeForm from '../components/shared/BikeForm'
+import { getBikeById, updateBike } from '../services/bikes'
 
-class ItemEdit extends Component {
+class BikeEdit extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            item: {
+            bike: {
                 title: '',
                 link: ''
             },
@@ -18,8 +18,8 @@ class ItemEdit extends Component {
 
     async componentDidMount() {
         try {
-            const item = await getItemById(this.props.match.params.id)
-            this.setState({ item })
+            const bike = await getBikeById(this.props.match.params.id)
+            this.setState({ bike })
         } catch (err) {
             console.error(err)
         }
@@ -28,39 +28,39 @@ class ItemEdit extends Component {
     handleChange = event => {
         const updatedField = { [event.target.name]: event.target.value }
 
-        const editedItem = Object.assign(this.state.item, updatedField)
+        const editedBike = Object.assign(this.state.bike, updatedField)
 
-        this.setState({ item: editedItem })
+        this.setState({ bike: editedBike })
     }
 
     handleSubmit = event => {
         event.preventDefault()
 
-        updateItem(this.props.match.params.id, { ...this.state.item })
+        updateBike(this.props.match.params.id, { ...this.state.bike })
             .then(() => this.setState({ updated: true }))
             .catch(console.error)
     }
 
     render() {
-        const { item, updated } = this.state
+        const { bike, updated } = this.state
         const { handleChange, handleSubmit } = this
         const { history } = this.props
 
         if (updated) {
-            return <Redirect to={`/items/${this.props.match.params.id}`} />
+            return <Redirect to={`/bikes/${this.props.match.params.id}`} />
         }
 
         return (
             <>
-                <ItemForm
+                <BikeForm
                     history={history}
-                    item={item}
+                    bike={bike}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    cancelPath={`/items/${this.props.match.params.id}`}
+                    cancelPath={`/bikes/${this.props.match.params.id}`}
                 />
             </>
         )
     }
 }
-export default ItemEdit
+export default BikeEdit
