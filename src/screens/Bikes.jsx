@@ -8,7 +8,7 @@ export default function Bikes(props) {
       return (
         <button onClick={() => history.push(`${match.url}/${id}`)}>
           See More
-                </button>
+        </button>
       )
     } else {
       return null
