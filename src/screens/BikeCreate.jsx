@@ -1,55 +1,55 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import ItemForm from '../components/shared/ItemForm'
+import BikeForm from '../components/shared/BikeForm'
 import Layout from '../components/shared/Layout'
-import { createItem } from '../services/items'
+import { createBike } from '../services/bikes'
 
-class ItemCreate extends Component {
+class BikeCreate extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            item: {
+            bike: {
                 title: '',
                 link: ''
             },
-            createdItem: null
+            createdBike: null
         }
     }
 
     handleChange = event => {
         const updatedField = { [event.target.name]: event.target.value }
 
-        const editedItem = Object.assign(this.state.item, updatedField)
+        const editedBike = Object.assign(this.state.bike, updatedField)
 
-        this.setState({ item: editedItem })
+        this.setState({ bike: editedBike })
     }
 
     handleSubmit = async event => {
         event.preventDefault()
         
-        const res = await createItem(this.state.item)
+        const res = await createBike(this.state.bike)
         if (res.status === 201) {
-            this.props.addItem(res.data)
+            this.props.addBike(res.data)
             this.setState({ 
-                createdItem: res.data 
+                createdBike: res.data 
             })
         }
     }
 
     render() {
         const { handleChange, handleSubmit } = this
-        const { createdItem, item } = this.state
+        const { createdBike, bike } = this.state
         const { history } = this.props
 
-        if (createdItem) {
-            return <Redirect to={`/items`} />
+        if (createdBike) {
+            return <Redirect to={`/bikes`} />
         }
 
         return (
             <Layout>
-                <ItemForm
-                    item={item}
+                <BikeForm
+                    bike={bike}
                     history={history}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
@@ -60,4 +60,4 @@ class ItemCreate extends Component {
     }
 }
 
-export default ItemCreate
+export default BikeCreate

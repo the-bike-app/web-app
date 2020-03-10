@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getItems } from '../services/items'
+import { getBikes } from '../services/bikes'
 import Routes from '../routes'
 import Header from '../screens/Header'
 
@@ -8,36 +8,36 @@ export default class Container extends Component {
         super(props)
         this.state = {
             user: null,
-            items: []
+            bikes: []
         }
     }
 
     async componentDidMount() {
         try {
-            const items = await getItems()
-            this.setState({ items })
+            const bikes = await getBikes()
+            this.setState({ bikes })
         } catch (err) {
             console.error(err)
         }
     }
 
-    addItem = item => this.setState({ items: [...this.state.items, item] })
+    addBike = bike => this.setState({ bikes: [...this.state.bikes, bike] })
 
     setUser = user => this.setState({ user })
 
     clearUser = () => this.setState({ user: null })
 
     render() {
-        const { user, items } = this.state
+        const { user, bikes } = this.state
         return (
             <>
                 <Header user={user} />
                 <main className="container">
                     <Routes
-                        items={items}
+                        bikes={bikes}
                         user={user}
                         setUser={this.setUser}
-                        addItem={this.addItem}
+                        addBike={this.addBike}
                         clearUser={this.clearUser}
                     />
                 </main>
