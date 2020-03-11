@@ -1,13 +1,13 @@
-import bmx from '../../public/img/BMX-bike.png'
-import cruiser from '../../public/img/cruiser-bike.jpeg'
-import folding from '../../public/img/folding-bike.jpg'
-import hybrid from '../../public/img/hybrid-bike.jpg'
-import mountain from '../../public/img/mountain bike.jpg'
-import road from '../../public/img/road-bike.jpg'
-import tandem from '../../public/img/tandem-bike.jpg'
-import touring from '../../public/img/touring-bike.jpeg'
-import track from '../../public/img/track-bike.jpg'
-import urban from '../../public/img/urban-bike.jpg'
+import bmx from '../img/BMX-bike.png'
+import cruiser from '../img/cruiser-bike.jpeg'
+import folding from '../img/folding-bike.jpg'
+import hybrid from '../img/hybrid-bike.jpg'
+import mountain from '../img/mountain-bike.jpg'
+import road from '../img/road-bike.jpg'
+import tandem from '../img/tandem-bike.jpg'
+import touring from '../img/touring-bike.jpeg'
+import track from '../img/track-bike.jpg'
+import urban from '../img/urban-bike.jpg'
 
 export const brands = ['Bianchi', 'Diamondback', 'Firmstrong', 'Giant', 'Huffy', 'Kestral', 'Mongoose', 'Raleigh', 'Retrospec', 'Santa Cruz', 'Schwinn', 'Specialized', 'Strider', 'Trek Bikes', 'Vilano']
 
