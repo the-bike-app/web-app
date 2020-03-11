@@ -1,10 +1,19 @@
 import React from 'react'
+import Footer from '../components/shared/Footer'
+
 
 const Browse = (props) => {
   return (
     <>
-      <h1>This is the browse page</h1>
+      <div className='browse-title'>
+        <h1>Browse</h1>
+      </div>
+
+      <Footer />
+
     </>
+
+
   )
 }
 

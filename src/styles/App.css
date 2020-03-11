@@ -91,6 +91,19 @@ button {
   justify-content: center;
 }
 
+.browse-title h1{
+  font-size: 3em;
+  color: black;
+  text-shadow: none;
+}
+
+
+/* .container{
+  font-family: 'Ultra', serif;
+  font-size: 25px;
+} */
+
+
 footer{
   background-color: black;
   color: white;
