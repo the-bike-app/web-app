@@ -32,7 +32,7 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
 
     <Route 
       path='/browse'
-      component={Browse}
+      render={props => <Browse {...props} user={user} bikes={bikes} />}
     />
 
     <Route
