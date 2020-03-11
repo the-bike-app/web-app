@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/shared/Layout'
+import Footer from '../components/shared/Footer'
 import { Link } from 'react-router-dom'
 
 export default function Bikes(props) {
@@ -42,18 +43,7 @@ export default function Bikes(props) {
 
   } else {
     return (
-      // <div className="landing">
-      //   <h2>Welcome to the Bikes App!</h2>
-      // </div>
       <>
-        <div class="navbar">
-          <ul>
-            <Link to=''><li>HOME</li></Link>
-            <Link to=''><li>BROWSE</li></Link>
-            <Link to=''><li>LOGIN</li></Link>
-          </ul>
-        </div>
-
         <div class="div_image">
           <h1>WHEEL DEAL</h1>
         </div>
@@ -66,10 +56,7 @@ export default function Bikes(props) {
             <button type="submit">SELL</button>
           </div>
         </div>
-
-        <footer>
-
-        </footer>
+        <Footer />
       </>
     )
   }
