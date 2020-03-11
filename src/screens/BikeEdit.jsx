@@ -17,6 +17,7 @@ class BikeEdit extends Component {
     }
   }
 
+
   async componentDidMount() {
     try {
       const bike = await getBikeById(this.props.match.params.id)
