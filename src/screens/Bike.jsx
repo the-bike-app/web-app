@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom'
 import Layout from '../components/shared/Layout'
 import { getBikeById, deleteBike } from '../services/bikes'
 
+
+
 class Bike extends Component {
   constructor(props) {
     super(props)
@@ -55,9 +57,7 @@ class Bike extends Component {
           <h4>{bike.title}</h4>
           <p>Link: {bike.link}</p>
           <div className="buttons">
-            <button className="danger" onClick={this.destroy}>
-              Delete Bike
-                        </button>
+            <button className="danger" onClick={this.destroy}>Delete Bike</button>
             <button
               className="edit"
               onClick={() =>
@@ -65,9 +65,7 @@ class Bike extends Component {
                   `/bikes/${this.props.match.params.id}/edit`
                 )
               }
-            >
-              Edit
-                        </button>
+            >Edit</button>
           </div>
         </div>
       </Layout>
