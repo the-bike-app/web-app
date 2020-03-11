@@ -31,7 +31,7 @@ li {
 }
 
 .div_image {
-  background: url("../images/homepg.jpg");
+  background: url(".../public/img/homepg.jpg");
   min-height: 690px;
   background-attachment: fixed;
   background-position: bottom;
