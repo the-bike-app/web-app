@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Browse = (props) => {
-  return (
-    <>
-      <h1>This is the browse page</h1>
-    </>
-  )
+class Browse extends Component {
+  constructor() {
+    super()
+    this.state={}
+  }
+
+  componentDidMount() {
+    
+  }
+
+  render() {
+    return (
+      <>
+        <h1>This is the browse page</h1>
+      </>
+    )
+  }
 }
 
 export default Browse
