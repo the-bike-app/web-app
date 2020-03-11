@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/shared/Layout'
+import { Link } from 'react-router-dom'
 
 export default function Bikes(props) {
   const { history, match, user, bikes } = props
@@ -38,11 +39,38 @@ export default function Bikes(props) {
         <div className="item-container">{renderBikes()}</div>
       </Layout>
     )
+
   } else {
     return (
-      <div className="landing">
-        <h2>Welcome to the Bikes App!</h2>
-      </div>
+      // <div className="landing">
+      //   <h2>Welcome to the Bikes App!</h2>
+      // </div>
+      <>
+        <div class="navbar">
+          <ul>
+            <Link to=''><li>HOME</li></Link>
+            <Link to=''><li>BROWSE</li></Link>
+            <Link to=''><li>LOGIN</li></Link>
+          </ul>
+        </div>
+
+        <div class="div_image">
+          <h1>WHEEL DEAL</h1>
+        </div>
+
+        <div class="div_text">
+          <p class="info"> Welcome to Wheel Deal, New York City’s digital marketplace for that two-wheel life. Browse our selection to find your next ride. Or, if you have a bike to sell, we can connect you with potential buyers in your neighborhood. Feel free to browse our selection or click Buy or Sell below to sign up. And remember, being on a bike on a rainy day is always better than being on the subway during rush hours.</p>
+
+          <div class="buttons">
+            <button type="submit">BUY</button>
+            <button type="submit">SELL</button>
+          </div>
+        </div>
+
+        <footer>
+
+        </footer>
+      </>
     )
   }
 }
