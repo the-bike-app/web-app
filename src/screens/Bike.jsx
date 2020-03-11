@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom'
 import Layout from '../components/shared/Layout'
 import { getBikeById, deleteBike } from '../services/bikes'
 
+
+
 class Bike extends Component {
   constructor(props) {
     super(props)
@@ -66,7 +68,7 @@ class Bike extends Component {
                 )
               }
             >
-              Edit
+              shmeEdit
                         </button>
           </div>
         </div>
