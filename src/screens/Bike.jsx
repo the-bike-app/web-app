@@ -68,7 +68,7 @@ class Bike extends Component {
                 )
               }
             >
-              shmeEdit
+              Edit
                         </button>
           </div>
         </div>
