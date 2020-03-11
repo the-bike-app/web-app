@@ -56,10 +56,10 @@ h1{
   font-size: 90px;
   opacity: 85%;
   text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		3px 3px 0 #000;
+		-2.5px -2.5px 0 #000,
+		2.5px -2.5px 0 #000,
+		-2.5px 2.5px 0 #000,
+		2.5px 2.5px 0 #000;
 
 }
 
@@ -95,9 +95,38 @@ footer{
   background-color: black;
   color: white;
   height: 40px;
+  text-align: center;
+  line-height: 40px;
 }
 
+.navbar {
+  background: #fcba03;
+  color: black;
+  height: 4em;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.navbar .nav .links a,
+.navbar span {
+  font-family: 'Ultra', serif;
+  margin: 0 1em;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+}
+
+.navbar .nav .links a:hover {
+  color: white;
+}
+
+.navbar .nav {
+  display: flex;
+  transition: all 0.4s ease;
+}
 
 
 
