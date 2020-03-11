@@ -1,4 +1,6 @@
 import React from 'react'
+import Footer from '../components/shared/Footer'
+
 
 function Browse(props) {
   //this function will be used to show bikes determined if the user is signed in or not
@@ -19,9 +21,15 @@ function Browse(props) {
 
   return (
     <>
-      <h1>Browse Page</h1>
-      {showBikes()}
+      <div className="browse-title">
+        <h1>Browse Page</h1>
+        {showBikes()}
+
+      </div>
+
     </>
+
+
   )
 }
 
