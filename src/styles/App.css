@@ -26,7 +26,6 @@ li {
   margin: 10px;
   letter-spacing: 0.5px;
   padding: 5px;
-
 }
 
 .div_image {
@@ -152,8 +151,6 @@ footer{
   border: 1px solid black;
   text-align: center;
   overflow-wrap: break-word;
-
-
 }
 
 .bikes-container{
@@ -237,6 +234,121 @@ footer{
 
 .form-container form label {
   margin-top: 0.6em;
+}
+
+
+@media (max-width: 600px) {
+
+  h1{
+    font-family: 'Ultra', serif;
+
+    /* color: #fcba03; */
+    color: white;
+    text-align: center;
+    letter-spacing: 0.75px;
+    padding: 30px;
+    font-size: 65px;
+    opacity: 85%;
+    text-shadow:
+      -2.5px -2.5px 0 #000,
+      2.5px -2.5px 0 #000,
+      -2.5px 2.5px 0 #000,
+      2.5px 2.5px 0 #000;
+  }
+
+  .div_image {
+    background: url("../img/homepg.jpg");
+    min-height: 550px;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+
+
+  .div_text{
+    background-color: #fcba03;
+    height: 80vh;  
+  }
+
+  li {
+    font-family: 'Ultra', serif;
+    color: black;
+    font-size: 10px;
+    display:inline;
+    margin: 0px;
+    letter-spacing: 0.5px;
+    padding: 0px;
+  }
+
+  .navbar {
+    width: max-content;
+  }
+
+  .links a {
+    margin: 12px !important;
+  }
+
+
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  h1{
+    font-family: 'Ultra', serif;
+
+    /* color: #fcba03; */
+    color: white;
+    text-align: center;
+    letter-spacing: 0.75px;
+    padding: 30px;
+    font-size: 65px;
+    opacity: 85%;
+    text-shadow:
+      -2.5px -2.5px 0 #000,
+      2.5px -2.5px 0 #000,
+      -2.5px 2.5px 0 #000,
+      2.5px 2.5px 0 #000;
+  }
+
+  .div_image {
+    background: url("../img/homepg.jpg");
+    min-height: 690px;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+
+
+  .div_text{
+    background-color: #fcba03;
+    height: 105vh;  
+  }
+
+  li {
+    font-family: 'Ultra', serif;
+    color: black;
+    font-size: 10px;
+    display:inline;
+    margin: 0px;
+    letter-spacing: 0.5px;
+    padding: 0px;
+  }
+
+  .navbar {
+    width: max-content;
+  }
+
+  .links a {
+    margin: 12px !important;
+  }
+
 }
 
 @media (max-width: 800px) {
