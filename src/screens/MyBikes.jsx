@@ -38,11 +38,13 @@ class MyBikes extends React.Component {
               <button className="danger" onClick={this.destroy}>Delete Bike</button>
               <button
                 className="edit"
-                onClick={(e) =>
+                value={bike._id}
+                onClick={(e) => {
+                  console.log(e.target.value)
                   this.props.history.push(
-                    `/users/${this.props.user}/edit`
+                    `/users/${this.props.user._id}/bikes/${e.target.value}/edit`
                   )
-                }
+                }}
               >Edit</button>
             </div>
           </div>

@@ -60,6 +60,7 @@ class BikeEdit extends Component {
 
     return (
       <>
+        <div>Hello</div>
         <BikeForm
           history={history}
           bike={bike}
