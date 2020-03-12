@@ -8,14 +8,15 @@ const Header = ({ user }) => {
   console.log(user)
   const authenticatedOptions = (
     <div className="links">
+      {user && <NavLink to={`/users/${user._id}/bikes`}>My Bikes</NavLink>}
       <NavLink to="/change-password">Change Password</NavLink>
       <NavLink to="/sign-out">Sign Out</NavLink>
-      {user && <NavLink to={`/users/${user._id}/bikes`}>My Bikes</NavLink>}
     </div>
   )
   
   const unauthenticatedOptions = (
     <div className="links">
+      <NavLink to="/">Home</NavLink>
       <NavLink to="/sign-up">Sign Up</NavLink>
       <NavLink to="/sign-in">Sign In</NavLink>
     </div>
@@ -23,7 +24,6 @@ const Header = ({ user }) => {
   
   const alwaysOptions = (
     <div className="links">
-      <NavLink to="/">Home</NavLink>
       <NavLink to='/Browse'>Browse</NavLink>
     </div>
   )
