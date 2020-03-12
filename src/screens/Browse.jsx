@@ -23,6 +23,7 @@ function Browse(props) {
     <>
       <div className="browse-title">
         <h1>Browse Page</h1>
+
         {showBikes()}
         <Footer />
       </div>
