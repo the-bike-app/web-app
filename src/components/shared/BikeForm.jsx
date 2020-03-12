@@ -1,9 +1,13 @@
 import React from 'react'
+import Dropdown from './Dropdown'
+import {brands, types, boroughs} from '../../services/constants'
+
 
 const BikeForm = ({
   bike,
   handleSubmit,
   handleChange,
+  handleDropdown,
   cancelPath,
   history
 }) => {
@@ -11,31 +15,20 @@ const BikeForm = ({
   return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
-        <label>Brand</label>
-        <input
-          placeholder='Mongoose'
-          value={bike.brand}
-          name='brand'
-          required
-          onChange={handleChange}
+        <Dropdown
+          listName="brand"
+          choices={brands}
+          handleChange={handleChange}
         />
-
-        <label>Type</label>
-        <input
-          placeholder='Mountain'
-          value={bike.type}
-          name='type'
-          required
-          onChange={handleChange}
+        <Dropdown
+          listName="type"
+          choices={types}
+          handleChange={handleChange}
         />
-
-        <label>Type</label>
-        <input
-          placeholder='Manhattan'
-          value={bike.location}
-          name='location'
-          required
-          onChange={handleChange}
+        <Dropdown
+          listName="location"
+          choices={boroughs}
+          handleChange={handleChange}
         />
         <label>Description</label>
         <input
