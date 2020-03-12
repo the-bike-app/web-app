@@ -1,30 +1,32 @@
 import React from 'react'
 import Footer from '../components/shared/Footer'
 
-
 function Browse(props) {
-  //this function will be used to show bikes determined if the user is signed in or not
   const showBikes = () => {
-    if (props.user) {
-      return (
-        <h4>test signed in</h4>
-      )
+    if (props.bikes) {
+      return props.bikes.map(bike => {
+        return (
+          <div className="item" key={bike._id}>
+            <h2>{bike.brand}</h2>
+            <p>{bike.type}</p>
+            <p>${bike.price}</p>
+            <p>{bike.location}</p>
+            <img src={bike.image} alt={bike.type} />
+          </div>
+        )
+      })
     } else {
-      return (
-        <h4>test not signed in</h4>
-      )
+      return null
     }
   }
-
-  console.log(props.user)
-  console.log(props.bikes)
-
+  
   return (
     <>
       <div className="browse-title">
         <h1>Browse Page</h1>
-
-        {showBikes()}
+        <div className='bikes-container'>
+          {showBikes()}
+        </div>
         <Footer />
       </div>
 
