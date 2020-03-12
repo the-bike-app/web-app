@@ -33,12 +33,14 @@ class BikeEdit extends Component {
   }
 
   handleChange = event => {
+    console.log(event.target.value)
     const updatedField = { [event.target.name]: event.target.value }
 
     const editedBike = Object.assign(this.state.bike, updatedField)
 
     this.setState({ bike: editedBike })
   }
+
 
   handleSubmit = event => {
     event.preventDefault()
@@ -51,7 +53,7 @@ class BikeEdit extends Component {
   render() {
     console.log()
     const { bike, updated } = this.state
-    const { handleChange, handleSubmit } = this
+    const { handleChange, handleSubmit, handleDropdown } = this
     const { history } = this.props
 
     if (updated) {
