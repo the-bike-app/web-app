@@ -53,8 +53,7 @@ export default function Bikes(props) {
           </p>
 
           <div className="buttons">
-            <button type="submit">BUY</button>
-            <button type="submit">SELL</button>
+            <button type="submit">BUY/SELL</button>
           </div>
         </div>
         <Footer />
