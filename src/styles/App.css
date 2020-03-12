@@ -91,7 +91,7 @@ button {
 }
 
 .browse-title h1{
-  font-size: 3em;
+  font-size: 2.5em;
   color: black;
   text-shadow: none;
 }
@@ -161,6 +161,18 @@ footer{
   display:flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.form-container h3{
+  font-family: 'Ultra', serif;
+  font-size: 2em;
+  color: black;
+  text-shadow: none;
+  text-align: center;
+}
+
+
+@media (max-width: 800px) {
 }
 
 
