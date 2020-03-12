@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { getBikes } from '../services/bikes'
 import Routes from '../routes'
 import Header from '../screens/Header'
-import { verifyToken } from '../services/auth'
 
 export default class Container extends Component {
   constructor(props) {
@@ -14,14 +13,11 @@ export default class Container extends Component {
   }
 
   async componentDidMount() {
-    const user = await verifyToken()
-    if (user) {
-      try {
-        const bikes = await getBikes()
-        this.setState({ bikes })
-      } catch (err) {
-        console.error(err)
-      }
+    try {
+      const bikes = await getBikes()
+      this.setState({ bikes })
+    } catch (err) {
+      console.error(err)
     }
   }
 

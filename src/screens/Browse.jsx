@@ -16,10 +16,10 @@ function Browse(props) {
         )
       })
     } else {
-      return null
+      return <p>No bikes</p>
     }
   }
-  
+  console.log(props.bikes)
   return (
     <>
       <div className="browse-title">

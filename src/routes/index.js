@@ -31,7 +31,7 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
       render={props => <SignUp {...props} setUser={setUser} />}
     />
 
-    <Route 
+    <Route
       path='/browse'
       render={props => <Browse {...props} user={user} bikes={bikes} />}
     />
@@ -58,7 +58,7 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
       exact
       user={user}
       path="/users/:id/bikes/:bikeid/edit"
-      render={props => <BikeEdit {...props} user={user}/>}
+      render={props => <BikeEdit {...props} user={user} />}
     />
     <AuthenticatedRoute
       user={user}
