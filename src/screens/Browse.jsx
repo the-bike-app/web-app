@@ -19,7 +19,6 @@ function Browse(props) {
       return null
     }
   }
-  console.log(showBikes())
   return (
     
     <>
