@@ -57,7 +57,7 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
     <AuthenticatedRoute
       exact
       user={user}
-      path="/bikes/:id/edit"
+      path="/users/:id/bikes/:bikeid/edit"
       render={props => <BikeEdit {...props} user={user}/>}
     />
     <AuthenticatedRoute
