@@ -16,21 +16,22 @@ function Browse(props) {
         )
       })
     } else {
-      return null
+      return <p>No bikes</p>
     }
   }
+
   return (
-    
+
     <>
       <div className="browse-title">
         <h1>Browse</h1>
         <div className='bikes-container'>
           {showBikes()}
-          
+
         </div>
         <Footer />
       </div>
-    
+
 
     </>
 
