@@ -27,12 +27,9 @@ function Browse(props) {
         <h1>Browse</h1>
         <div className='bikes-container'>
           {showBikes()}
-
         </div>
         <Footer />
       </div>
-
-
     </>
 
 
