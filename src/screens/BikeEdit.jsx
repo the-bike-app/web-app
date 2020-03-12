@@ -9,8 +9,13 @@ class BikeEdit extends Component {
 
     this.state = {
       bike: {
-        title: '',
-        link: ''
+        user: this.props.user._id,
+        brand: '',
+        type: '',
+        location: '',
+        description: '',
+        price: '',
+        image: ''
       },
       user: {},
       updated: false
@@ -55,6 +60,7 @@ class BikeEdit extends Component {
 
     return (
       <>
+        <div>Hello</div>
         <BikeForm
           history={history}
           bike={bike}
