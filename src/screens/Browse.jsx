@@ -19,16 +19,18 @@ function Browse(props) {
       return null
     }
   }
-  
   return (
+    
     <>
       <div className="browse-title">
-        <h1>Browse Page</h1>
+        <h1>Browse</h1>
         <div className='bikes-container'>
           {showBikes()}
+          
         </div>
         <Footer />
       </div>
+    
 
     </>
 
