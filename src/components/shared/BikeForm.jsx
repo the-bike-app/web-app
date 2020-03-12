@@ -6,7 +6,9 @@ const BikeForm = ({
   handleChange,
   cancelPath,
   history
-}) => (
+}) => {
+  console.log(bike)
+  return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
         <label>Brand</label>
@@ -66,5 +68,6 @@ const BikeForm = ({
       </form>
     </div>
   )
+}
 
 export default BikeForm
