@@ -141,6 +141,29 @@ footer{
 }
 
 
+.item{
+  background-color: white;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin: 10px;
+  width: 175px;
+  height: 160px;
+  border: 1px solid black;
+  text-align: center;
+  overflow-wrap: break-word;
+
+
+}
+
+.bikes-container{
+  background-color: white;
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
 
 
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
