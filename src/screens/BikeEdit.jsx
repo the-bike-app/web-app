@@ -15,7 +15,7 @@ class BikeEdit extends Component {
         location: '',
         description: '',
         price: '',
-        image: ''
+        img: ''
       },
       user: {},
       updated: false
@@ -25,7 +25,7 @@ class BikeEdit extends Component {
 
   async componentDidMount() {
     try {
-      const bike = await getBikeById(this.props.match.params.id)
+      const bike = await getBikeById(this.props.match.params.bikeid)
       this.setState({ bike })
     } catch (err) {
       console.error(err)
@@ -45,19 +45,19 @@ class BikeEdit extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    updateBike(this.props.match.params.id, { ...this.state.bike })
+    updateBike(this.props.match.params.bikeid, { ...this.state.bike })
       .then(() => this.setState({ updated: true }))
       .catch(console.error)
   }
 
   render() {
-    console.log()
+   
     const { bike, updated } = this.state
     const { handleChange, handleSubmit } = this
     const { history } = this.props
 
     if (updated) {
-      return <Redirect to={`/bikes/${this.props.match.params.id}`} />
+      return <Redirect to={`/users/${this.props.user._id}/bikes`} />
     }
 
     return (
