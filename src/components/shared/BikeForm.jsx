@@ -5,8 +5,10 @@ import { brands, types, boroughs } from '../../services/constants'
 
 const BikeForm = ({
   bike,
+  imagePath,
   handleSubmit,
   handleChange,
+  handleUpload,
   handleDropdown,
   cancelPath,
   history
@@ -49,16 +51,13 @@ const BikeForm = ({
         <label>Image</label>
         <input
           type='file'
-          placeholder='/img/mountain-bike.jpg'
-          value={bike.image}
+          value={imagePath}
           name='image'
           required
-          onChange={handleChange}
+          onChange={handleUpload}
         />
         <button type='submit'>Submit</button>
-        <button className='danger' onClick={() => history.push(cancelPath)}>
-          Cancel
-			</button>
+        <button className='danger' onClick={() => history.push(cancelPath)}>Cancel</button>
       </form>
     </div>
   )

@@ -18,21 +18,34 @@ class BikeCreate extends Component {
         price: '',
         image: ''
       },
-      createdBike: null
+      createdBike: null,
+      imagePath: ''
     }
+  }
+
+  //William Is working on this - do not edit (remove .path from line 30)
+  handleUpload = (event) => {
+    console.log(event.target.files[0])
+    const image = event.target.files[0].name
+    // const data = new FormData()
+    // data.append('file', event.target.files[0])
+    const path = event.target.files[0].path
+    const updatedField = { image: image }
+    const editedImage = Object.assign(this.state.bike, updatedField)
+    this.setState({
+      bike: editedImage,
+      imagePath: path
+    })
   }
 
   handleChange = event => {
     const updatedField = { [event.target.name]: event.target.value }
-
     const editedBike = Object.assign(this.state.bike, updatedField)
-
     this.setState({ bike: editedBike })
   }
 
-  handleSubmit = async event => {
+  handleSubmit = async (event) => {
     event.preventDefault()
-
     const res = await createBike(this.state.bike)
     if (res.status === 201) {
       this.props.addBike(res.data)
@@ -43,8 +56,8 @@ class BikeCreate extends Component {
   }
 
   render() {
-    const { handleChange, handleSubmit } = this
-    const { createdBike, bike } = this.state
+    const { handleChange, handleSubmit, handleUpload } = this
+    const { createdBike, bike, imagePath } = this.state
     const { history } = this.props
 
     if (createdBike) {
@@ -55,10 +68,12 @@ class BikeCreate extends Component {
       <Layout>
         <BikeForm
           bike={bike}
+          imagePath={imagePath}
           history={history}
           handleChange={handleChange}
+          handleUpload={handleUpload}
           handleSubmit={handleSubmit}
-          cancelPath="/"
+          cancelPath={`/users/${this.state.user}/bikes`}
         />
       </Layout>
     )
