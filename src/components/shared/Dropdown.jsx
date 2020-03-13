@@ -6,7 +6,7 @@ class Dropdown extends React.Component {
   }
   renderList = () => {
     console.log('rendered')
-   return this.props.choices.map((choice) => <option value={choice} >{choice}</option>)
+   return this.props.choices.map((choice, index) => <option value={choice} key={index}>{choice}</option>)
   }
   render() {
     return (

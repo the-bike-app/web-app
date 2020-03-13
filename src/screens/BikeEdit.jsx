@@ -45,7 +45,7 @@ class BikeEdit extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    updateBike(this.props.match.params.id, { ...this.state.bike })
+    updateBike(this.props.match.params.bikeid, { ...this.state.bike })
       .then(() => this.setState({ updated: true }))
       .catch(console.error)
   }
