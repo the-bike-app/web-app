@@ -1,5 +1,4 @@
 import React from 'react'
-import {brands, types, boroughs} from '../../services/constants'
 
 class Dropdown extends React.Component {
   constructor(props) {
