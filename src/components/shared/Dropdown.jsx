@@ -6,13 +6,19 @@ class Dropdown extends React.Component {
   }
   renderList = () => {
     console.log('rendered')
-   return this.props.choices.map((choice) => <option value={choice} >{choice}</option>)
+    return this.props.choices.map((choice, index) => {
+      if (this.props.selected === choice) {
+        return (<option value={choice} key={index} selected>{choice}</option>)
+      } else {
+       return (<option value={choice} key={index}>{choice}</option>)
+
+      }
+     })
   }
   render() {
     return (
       <>
       <label>{this.props.listName}</label>
-
       <select name= {this.props.listName} onChange={this.props.handleChange}>
         {this.renderList()}
         </select>

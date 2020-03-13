@@ -21,16 +21,21 @@ const BikeForm = ({
           listName="brand"
           choices={brands}
           handleChange={handleChange}
+          selected={bike.brand}
         />
         <Dropdown
           listName="type"
           choices={types}
           handleChange={handleChange}
+          bike={bike}
+          selected={bike.type}
         />
         <Dropdown
           listName="location"
           choices={boroughs}
           handleChange={handleChange}
+          bike={bike}
+          selected={bike.location}
         />
         <label>Description</label>
         <input
