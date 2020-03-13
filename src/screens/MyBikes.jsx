@@ -63,14 +63,7 @@ class MyBikes extends React.Component {
     console.log(this.props.user)
     return (
       <>
-        <button
-              className="edit"
-              onClick={() =>
-                this.props.history.push(
-                  `/users/${this.props.users}/create`
-                )
-              }
-            >New Bike</button>
+        <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.users}/create`)}>New Bike</button>
         <div>{this.renderBikes()}</div>
       </>)
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Dropdown from './Dropdown'
-import {brands, types, boroughs} from '../../services/constants'
+import { brands, types, boroughs } from '../../services/constants'
 
 
 const BikeForm = ({
@@ -48,6 +48,7 @@ const BikeForm = ({
         />
         <label>Image</label>
         <input
+          type='file'
           placeholder='/img/mountain-bike.jpg'
           value={bike.image}
           name='image'
