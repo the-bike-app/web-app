@@ -1,46 +1,43 @@
 import React from 'react'
-import { deleteBike } from '../services/bikes'
+import { deleteBike, getBikeById } from '../services/bikes'
 
 class MyBikes extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      bikes: [{
-        _id: 1234567,
-        brand: 'Schwinn',
-        type: 'BMX',
-        location: 'Queens',
-        description: 'bad',
-        price: '$200',
-        user: 'mike'
-      }, {
-        _id: 1687540,
-        brand: 'Mongoose',
-        type: 'Mountain',
-        location: 'Brooklyn',
-        description: 'good',
-        price: '$100',
-        user: 'jim'
-      }]
+      bikes: []
+    }
+  }
+  componentDidMount = () => {
+    if (this.state.bikes.length < 1) {
+    this.props.user.users_bikes.map(async (bike) => {
+      const response = await getBikeById(bike)
+      console.log(response)
+      this.setState(prevState => ({bikes: [...prevState.bikes, response]}))
+    })
     }
   }
 
-  renderBikes = () => {
+  renderBikes =  () => {
+    
     if (this.state.bikes) {
+
       return this.state.bikes.map(bike => {
         return (
-          <div className='bike'>
-            <div>{bike.brand}</div>
-            <div>{bike.style}</div>
-            <div>{bike.location}</div>
-            <div>{bike.user}</div>
+          <div className='bike' key= {bike._id}>
+            <div>Brand: {bike.brand}</div>
+            <div>Type: {bike.type}</div>
+            <div>Location: {bike.location}</div>
+            <div>Description: {bike.description}</div>
+            <div>Price: {bike.price}</div>
+            <div>Picture: <img src={bike.img} alt="bike"/></div>
+            <div>Seller: {this.props.user.username}</div>
             <div className="buttons">
-              <button className="danger" onClick={this.destroy}>Delete Bike</button>
+              <button className="danger" value={bike._id}onClick={this.destroy}>Delete Bike</button>
               <button
                 className="edit"
                 value={bike._id}
                 onClick={(e) => {
-                  console.log(e.target.value)
                   this.props.history.push(
                     `/users/${this.props.user._id}/bikes/${e.target.value}/edit`
                   )
@@ -54,13 +51,16 @@ class MyBikes extends React.Component {
       return null
     }
   }
-  destroy = () => {
-    deleteBike(this.state.bike._id)
-      .then(() => this.setState({ deleted: true }))
+  destroy = (e) => {
+    deleteBike(e.target.value)
+      .then(() => {
+        this.setState({ bikes: [] })
+        this.componentDidMount()
+      })
       .catch(console.error)
   }
   render() {
-    console.log(this.props.user)
+
     return (
       <>
         <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.users}/create`)}>New Bike</button>

@@ -53,7 +53,7 @@ class BikeEdit extends Component {
   render() {
     console.log()
     const { bike, updated } = this.state
-    const { handleChange, handleSubmit, handleDropdown } = this
+    const { handleChange, handleSubmit } = this
     const { history } = this.props
 
     if (updated) {
@@ -70,6 +70,9 @@ class BikeEdit extends Component {
           handleSubmit={handleSubmit}
           cancelPath={`/bikes/${this.props.match.params.id}`}
         />
+        <div className ='buttons'>
+        <button className="danger" onClick={this.destroy}>Delete Bike</button>
+        </div>
       </>
     )
   }
