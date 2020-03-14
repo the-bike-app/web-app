@@ -2,7 +2,6 @@ import React from 'react'
 import Dropdown from './Dropdown'
 import { brands, types, boroughs } from '../../services/constants'
 
-
 const BikeForm = ({
   bike,
   imagePath,
@@ -58,7 +57,7 @@ const BikeForm = ({
           type='file'
           value={imagePath}
           name='image'
-          required
+          
           onChange={handleUpload}
         />
         <button type='submit'>Submit</button>
