@@ -3,7 +3,9 @@ import { Redirect } from 'react-router-dom'
 import BikeForm from '../components/shared/BikeForm'
 import Layout from '../components/shared/Layout'
 import { createBike } from '../services/bikes'
+import axios from 'axios';
 
+//William Is working on this - do not edit!!
 class BikeCreate extends Component {
   constructor(props) {
     super(props)
@@ -23,14 +25,22 @@ class BikeCreate extends Component {
     }
   }
 
-  //William Is working on this - do not edit (remove .path from line 30)
   handleUpload = (event) => {
     console.log(event.target.files[0])
-    const image = event.target.files[0].name
-    // const data = new FormData()
-    // data.append('file', event.target.files[0])
-    const path = event.target.files[0].path
-    const updatedField = { image: image }
+
+    const image = event.target.files[0]
+
+    const data = new FormData()
+    data.append('file', image, image.name)
+    const path = event.target.value
+    const imageURL = `https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/${image.name}?alt=media`
+
+    axios.post(`https://us-central1-cool-bike-app.cloudfunctions.net/uploadFile`, data)
+      .then(res => {
+        console.log('axios res:', res)
+      })
+
+    const updatedField = { image: imageURL }
     const editedImage = Object.assign(this.state.bike, updatedField)
     this.setState({
       bike: editedImage,
