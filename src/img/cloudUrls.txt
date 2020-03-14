@@ -1,0 +1,12 @@
+BMX: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-BMX-bike.png?alt=media
+CRUISER: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-cruiser-bike.jpeg?alt=media
+FOLDING: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-folding-bike.jpg?alt=media
+HYBRID: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-hybrid-bike.jpg?alt=media
+MOBILE: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-mobilepic.jpg?alt=media
+MOUNTAIN: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-mountain-bike.jpg?alt=media
+ROAD: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-road-bike.jpg?alt=media
+TANDEM: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-tandem-bike.jpg?alt=media
+TOURING: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-touring-bike.jpeg?alt=media
+TRACK: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-track-bike.jpg?alt=media
+URBAN: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/default-urban-bike.jpg?alt=media
+HERO IMAGE: https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/homepg.jpg?alt=media
