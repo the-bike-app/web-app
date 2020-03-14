@@ -10,30 +10,30 @@ class MyBikes extends React.Component {
   }
   componentDidMount = () => {
     if (this.state.bikes.length < 1) {
-    this.props.user.users_bikes.map(async (bike) => {
-      const response = await getBikeById(bike)
-      console.log(response)
-      this.setState(prevState => ({bikes: [...prevState.bikes, response]}))
-    })
+      this.props.user.users_bikes.map(async (bike) => {
+        const response = await getBikeById(bike)
+        console.log(response)
+        this.setState(prevState => ({ bikes: [...prevState.bikes, response] }))
+      })
     }
   }
 
-  renderBikes =  () => {
-    
+  renderBikes = () => {
+
     if (this.state.bikes) {
 
       return this.state.bikes.map(bike => {
         return (
-          <div className='bike' key= {bike._id}>
+          <div className='bike' key={bike._id}>
             <div>Brand: {bike.brand}</div>
             <div>Type: {bike.type}</div>
             <div>Location: {bike.location}</div>
             <div>Description: {bike.description}</div>
             <div>Price: {bike.price}</div>
-            <div>Picture: <img src={bike.img} alt="bike"/></div>
+            <div>Picture: <img src={bike.img} alt="bike" /></div>
             <div>Seller: {this.props.user.username}</div>
             <div className="buttons">
-              <button className="danger" value={bike._id}onClick={this.destroy}>Delete Bike</button>
+              <button className="danger" value={bike._id} onClick={this.destroy}>Delete Bike</button>
               <button
                 className="edit"
                 value={bike._id}
@@ -63,7 +63,7 @@ class MyBikes extends React.Component {
 
     return (
       <>
-        <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.users}/create`)}>New Bike</button>
+        <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>New Bike</button>
         <div>{this.renderBikes()}</div>
       </>)
   }
