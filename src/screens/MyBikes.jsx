@@ -34,7 +34,6 @@ class MyBikes extends React.Component {
             <div>Description: {bike.description}</div>
             <div>Price: {bike.price}</div>
             <div>Picture: <img src={bikeImg} alt="bike" /></div>
-            <div>Seller: {this.props.user.username}</div>
             <div className="buttons">
               <button className="danger" value={bike._id} onClick={this.destroy}>Delete Bike</button>
               <button
