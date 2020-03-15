@@ -8,7 +8,7 @@ const BikeForm = ({
   handleSubmit,
   handleChange,
   handleUpload,
-  handleDropdown,
+  imagePreview,
   cancelPath,
   history
 }) => {
@@ -53,11 +53,11 @@ const BikeForm = ({
           onChange={handleChange}
         />
         <label>Image</label>
+        {imagePreview}
         <input
           type='file'
           value={imagePath}
           name='image'
-          
           onChange={handleUpload}
         />
         <button type='submit'>Submit</button>
