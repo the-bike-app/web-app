@@ -37,10 +37,24 @@ li {
   width: 100%;
 }
 
+.div_image2 {
+  background: url("../img/div2pic.jpg");
+  min-height: 690px;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
 .div_text{
   background-color: #fcba03;
   height: 60vh;
-  
+}
+
+.div_text2{
+  background-color: #03a1fc;
+  height: 60vh;
 }
 
 h1{
@@ -49,7 +63,7 @@ h1{
   color: white;
   text-align: center;
   letter-spacing: 0.75px;
-  padding: 30px;
+  padding: 20px;
   font-size: 90px;
   opacity: 85%;
   text-shadow:
