@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link} from 'react-router-dom'
 import { getBikeById } from '../services/bikes'
 import { images} from '../services/constants'
+import { getUserById } from '../services/users'
 
 
 class Bike extends Component {
@@ -10,22 +11,23 @@ class Bike extends Component {
 
     this.state = {
       bike: null,
+      user: null
     }
   }
 
   async componentDidMount() {
     try {
       const bike = await getBikeById(this.props.match.params.id)
-      this.setState({ bike })
+      const user = await getUserById(bike.user)
+      this.setState({ bike, user })
     } catch (err) {
       console.error(err)
     }
   }
-
   render() {
-    const { bike } = this.state
+    const { bike, user } = this.state
 
-    if (!bike) {
+    if (!bike || !user) {
       return <p>Loading...</p>
     }
     let bikeImg = ''
@@ -41,6 +43,7 @@ class Bike extends Component {
             <div>Description: {bike.description}</div>
             <div>Price: {bike.price}</div>
             <div>Picture: <img src={bikeImg} alt="bike" /></div>
+            <div>Seller: {user.username}</div>
         </div>
     )
   }

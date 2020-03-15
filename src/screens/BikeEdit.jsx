@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import BikeForm from '../components/shared/BikeForm'
 import { getBikeById, updateBike } from '../services/bikes'
+import axios from 'axios'
 
 class BikeEdit extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class BikeEdit extends Component {
         price: '',
         img: ''
       },
+      imagePreview: '',
       user: {},
       updated: false
     }
@@ -27,6 +29,7 @@ class BikeEdit extends Component {
     try {
       const bike = await getBikeById(this.props.match.params.bikeid)
       this.setState({ bike })
+      this.setState({imagePreview: bike.image})
     } catch (err) {
       console.error(err)
     }
@@ -39,6 +42,35 @@ class BikeEdit extends Component {
     const editedBike = Object.assign(this.state.bike, updatedField)
 
     this.setState({ bike: editedBike })
+  }
+  handleUpload = (event) => {
+    console.log(event.target.files[0])
+
+    const image = event.target.files[0]  
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      this.setState({
+        imagePreview: reader.result,
+      });
+    }
+    reader.readAsDataURL(image)
+
+    const data = new FormData()
+    data.append('file', image, image.name)
+    const path = event.target.value
+    const imageURL = `https://firebasestorage.googleapis.com/v0/b/cool-bike-app.appspot.com/o/${image.name}?alt=media`
+
+    axios.post(`https://us-central1-cool-bike-app.cloudfunctions.net/uploadFile`, data)
+      .then(res => {
+        console.log('axios res:', res)
+      })
+
+    const updatedField = { image: imageURL }
+    const editedImage = Object.assign(this.state.bike, updatedField)
+    this.setState({
+      bike: editedImage,
+      imagePath: path,
+    })
   }
 
 
@@ -59,6 +91,11 @@ class BikeEdit extends Component {
     if (updated) {
       return <Redirect to={`/users/${this.props.user._id}/bikes`} />
     }
+    let {imagePreview} = this.state;
+    let imagePreviewDiv = null;
+    if (imagePreview) {
+      imagePreviewDiv = (<img src={imagePreview} />);
+    }
 
     return (
       <>
@@ -68,7 +105,9 @@ class BikeEdit extends Component {
           bike={bike}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath={`/bikes/${this.props.match.params.id}`}
+          handleUpload={this.handleUpload}
+          cancelPath={`/users/${this.props.user._id}/bikes`}
+          imagePreview={imagePreviewDiv}
         />
         <div className ='buttons'>
         <button className="danger" onClick={this.destroy}>Delete Bike</button>
