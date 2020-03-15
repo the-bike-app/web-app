@@ -1,18 +1,21 @@
 import React from 'react'
 import Footer from '../components/shared/Footer'
+import { Link} from 'react-router-dom'
 
 function Browse(props) {
   const showBikes = () => {
     if (props.bikes) {
       return props.bikes.map(bike => {
         return (
-          <div className="item" key={bike._id}>
-            <h2>{bike.brand}</h2>
-            <p>{bike.type}</p>
-            <p>${bike.price}</p>
-            <p>{bike.location}</p>
-            <img src={bike.image} alt={bike.type} />
-          </div>
+          <Link to = {`/bikes/${bike._id}`}>
+            <div className="item" key={bike._id}>
+              <h2>{bike.brand}</h2>
+              <p>{bike.type}</p>
+              <p>${bike.price}</p>
+              <p>{bike.location}</p>
+              <img src={bike.image} alt={bike.type} />
+            </div>
+          </Link>
         )
       })
     } else {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import Layout from '../components/shared/Layout'
-import { getBikeById, deleteBike } from '../services/bikes'
-
+import { Link} from 'react-router-dom'
+import { getBikeById } from '../services/bikes'
+import { images} from '../services/constants'
 
 
 class Bike extends Component {
@@ -11,7 +10,6 @@ class Bike extends Component {
 
     this.state = {
       bike: null,
-      deleted: false
     }
   }
 
@@ -24,51 +22,26 @@ class Bike extends Component {
     }
   }
 
-  destroy = () => {
-    deleteBike(this.state.bike._id)
-      .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
-  }
-
   render() {
-    const { bike, deleted } = this.state
+    const { bike } = this.state
 
     if (!bike) {
       return <p>Loading...</p>
     }
-
-    if (deleted) {
-      return (
-        <Redirect
-          to={{
-            pathname: '/bikes',
-            state: { msg: 'Bike succesfully deleted!' }
-          }}
-        />
-      )
-    }
-
+    let bikeImg = ''
+    bike.image ?  bikeImg = bike.image : bikeImg = images[bike.type]
     return (
-      <Layout>
         <div className="bike">
-          <Link to="/bikes">
+          <Link to="/browse">
             <span> Back to all bikes</span>
           </Link>
-          <h4>{bike.title}</h4>
-          <p>Link: {bike.link}</p>
-          <div className="buttons">
-            <button className="danger" onClick={this.destroy}>Delete Bike</button>
-            <button
-              className="edit"
-              onClick={() =>
-                this.props.history.push(
-                  `/bikes/${this.props.match.params.id}/edit`
-                )
-              }
-            >Edit</button>
-          </div>
+            <div>Brand: {bike.brand}</div>
+            <div>Type: {bike.type}</div>
+            <div>Location: {bike.location}</div>
+            <div>Description: {bike.description}</div>
+            <div>Price: {bike.price}</div>
+            <div>Picture: <img src={bikeImg} alt="bike" /></div>
         </div>
-      </Layout>
     )
   }
 }
