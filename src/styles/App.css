@@ -49,12 +49,13 @@ li {
 
 .div_text{
   background-color: #fcba03;
-  height: 60vh;
+  height: 50vh;
 }
 
 .div_text2{
   background-color: #03a1fc;
-  height: 60vh;
+  height: 40vh;
+  text-align: center;
 }
 
 h1{
@@ -71,13 +72,22 @@ h1{
 		2.5px -2.5px 0 #000,
 		-2.5px 2.5px 0 #000,
 		2.5px 2.5px 0 #000;
+}
 
+h2{
+  padding: 50px 0 5px 0;
 }
 
 .info{
   padding: 75px;
   font-size: 22px;
+  text-align:center;
+}
 
+.info2{
+  padding: 40px;
+  font-size: 22px;
+  text-align:center;
 }
 
 
@@ -88,13 +98,13 @@ button {
   background-color: black;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  position: relative;
-  margin: 0 50px; 
+  /* position: relative; */
+  /* margin: 0 40px;  */
 }
 
 .buttons{
