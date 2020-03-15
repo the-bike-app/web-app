@@ -53,9 +53,28 @@ export default function Bikes(props) {
           </p>
 
         <div className="buttons">
-          <button type="submit">BUY/SELL</button>
+          <button type="submit">BROWSE</button>
         </div>
       </div>
+
+      <div className="div_image2">
+      </div>
+
+      <div className="div_text2">
+        
+        <h2>Voted #1 Place to sell your bike by TimeOut NY for three years in a row!</h2>
+        <p className="info2">
+          Connecting you with thousands of bike buyers in all five boroughs. Sign up today to find your new ride or a new home for your old one. 
+          </p>
+        
+          <div className="buttons">
+            <button type="submit">BUY/SELL</button>
+          </div>
+
+      </div>
+      
+      
+
       <Footer />
     </>
   )
