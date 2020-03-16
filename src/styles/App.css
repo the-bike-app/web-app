@@ -116,6 +116,12 @@ h3{
   padding: 40px;
 
 }
+h4{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
 
 .info{
   padding: 75px;
@@ -244,7 +250,7 @@ footer{
 }
 
 .form-container .danger {
-  background: #e57373;
+  background: #e40909;
 }
 
 .form-container h3 {
