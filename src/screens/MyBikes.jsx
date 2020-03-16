@@ -71,15 +71,19 @@ class MyBikes extends React.Component {
         
 
         <div className="div_image3">
-          {/* try to style this div into a box or make the text white or something */}
-          <div className=''>   
+          <div className='div_text3'>   
+            
+            <h3>Click the button below to list a New Bike for Sale.</h3>
+            
             <div className="buttons">
-            <h3>Click here to List a New Bike for Sale</h3>
-            <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
-            <div>{this.renderBikes()}</div>
+              <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
+              <div>{this.renderBikes()}</div>
             </div>  
+            <h3>Already have bike listed with us? Click on My Bikes to see all your listings.</h3>
+
           </div>
-      </div>
+        </div>
+
 
         <Footer />
       </>

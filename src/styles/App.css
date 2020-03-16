@@ -11,7 +11,7 @@
 }
 
 body{
-  background-color: black;
+  background-color: #6e6d6a;
 }
 
 .form-container{
@@ -69,8 +69,6 @@ li {
 
 
 
-
-
 .div_text{
   background-color: #fcba03;
   height: 50vh;
@@ -81,6 +79,14 @@ li {
   height: 40vh;
   text-align: center;
 }
+
+.div_text3{
+  /* background-color: #c75938; */
+  background-color: #0b572c;
+  height: 35vh;
+  text-align: center;
+}
+
 
 h1{
   font-family: 'Ultra', serif;
@@ -100,6 +106,12 @@ h1{
 
 h2{
   padding: 50px 0 5px 0;
+}
+
+
+h3{
+  padding: 40px;
+
 }
 
 .info{
