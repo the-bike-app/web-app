@@ -5,7 +5,6 @@ import Navbar from '../components/shared/Navbar.jsx'
 
 
 const Header = ({ user }) => {
-  console.log(user)
   const authenticatedOptions = (
     <div className="links">
       {user && <NavLink to={`/users/${user._id}/bikes`}>My Bikes</NavLink>}
