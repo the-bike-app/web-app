@@ -38,7 +38,7 @@ const BikeForm = ({
             bike={bike}
             selected={bike.location}
           />
-          <label>Description</label>
+          <label>Description*</label>
           <input
             placeholder='used, working'
             value={bike.description}
@@ -46,7 +46,7 @@ const BikeForm = ({
             required
             onChange={handleChange}
           />
-          <label>Price</label>
+          <label>Price*</label>
           <input
             placeholder='$200'
             value={bike.price}

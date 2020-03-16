@@ -6,6 +6,7 @@ class Dropdown extends React.Component {
   }
   renderList = () => {
     console.log('rendered')
+    console.log(this.props.selected)
     return this.props.choices.map((choice, index) => {
       if (this.props.selected === choice) {
         return (<option value={choice} key={index} selected>{choice}</option>)
@@ -16,10 +17,15 @@ class Dropdown extends React.Component {
      })
   }
   render() {
+    const {listName } = this.props
+    let blankDiv = ''
+    this.props.selected === 'create' ? blankDiv = (<></>) : blankDiv = (<option selected disabled value=""> -- select an option -- </option>)
+
     return (
       <>
-      <label>{this.props.listName}</label>
-      <select name= {this.props.listName} onChange={this.props.handleChange}>
+      <label>{listName.charAt(0).toUpperCase() + listName.slice(1)}*</label>
+        <select required name={listName} onChange={this.props.handleChange}>
+        {blankDiv}
         {this.renderList()}
         </select>
       </>

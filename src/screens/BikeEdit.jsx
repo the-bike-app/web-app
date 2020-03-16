@@ -20,7 +20,7 @@ class BikeEdit extends Component {
       },
       imagePreview: '',
       user: {},
-      updated: false
+      updated: false,
     }
   }
 
@@ -76,11 +76,11 @@ class BikeEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-
-    updateBike(this.props.match.params.bikeid, { ...this.state.bike })
-      .then(() => this.setState({ updated: true }))
-      .catch(console.error)
+      updateBike(this.props.match.params.bikeid, { ...this.state.bike })
+        .then(() => this.setState({ updated: true }))
+        .catch(console.error)
   }
+  
 
   render() {
    
@@ -110,7 +110,7 @@ class BikeEdit extends Component {
           imagePreview={imagePreviewDiv}
         />
         <div className ='buttons'>
-        <button className="danger" onClick={this.destroy}>Delete Bike</button>
+          <button className="danger" onClick={this.destroy}>Delete Bike</button>
         </div>
       </>
     )

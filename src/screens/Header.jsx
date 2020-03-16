@@ -16,7 +16,11 @@ const Header = ({ user }) => {
   const unauthenticatedOptions = (
     <div className="links">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/"><img src="/img/wdlogo.png"/></NavLink>
+
+      {/* <NavLink to='/'>
+        <img src='https://i.imgur.com/YI3Pdn9.png' alt='Wheel Deal'  width='40px' height='70px'/>
+      </NavLink> */}
+
       <NavLink to="/sign-in">Sign In</NavLink>
     </div>
   )
