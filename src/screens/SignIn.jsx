@@ -49,7 +49,7 @@ class SignIn extends Component {
         </button>
       )
     } else {
-      return <button type="submit">Sign In</button>
+      return <button type="submit">Click Here</button>
     }
   }
 
