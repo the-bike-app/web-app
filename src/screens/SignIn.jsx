@@ -88,7 +88,7 @@ class SignIn extends Component {
             {this.renderError()}
 
             <Link to={'/sign-up'} style={{ textDecoration: 'none' }}>
-              <h4>Dont have an account? <br /> Sign up here</h4>
+              <h4>Dont have an account? <br /> Sign up here.</h4>
             </Link>
 
           </form>
