@@ -5,7 +5,15 @@ import { Link } from 'react-router-dom'
 class Browse extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      bike: ''
+    }
+  }
+
+  searchBikes = (event) => {
+    this.setState ({
+      bike: event.target.value
+    })
   }
 
   showBikes = () => {
@@ -46,14 +54,29 @@ class Browse extends Component {
   }
 
   render() {
+
+    const { searchBikes } = this
+    const { bike } = this.state
+
     return (
 
       <>
         <div className="browse-title">
+
           <h1>Browse</h1>
+
+          <input
+            onChange={searchBikes}
+            type='text'
+            name='search'
+            placeholder='Search Bikes'
+            value={bike}
+          />
+
           <div className='bikes-container'>
             {this.showBikes()}
           </div>
+
           <Footer />
         </div>
       </>
