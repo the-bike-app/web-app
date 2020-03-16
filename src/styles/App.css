@@ -58,8 +58,8 @@ li {
 }
 
 .div_image3 {
-  background: url("../img/div3pic.jpg");
-  min-height: 690px;
+  background: url("../img/div4.jpg");
+  min-height: 400px;
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -82,9 +82,12 @@ li {
 
 .div_text3{
   /* background-color: #c75938; */
-  background-color: #0b572c;
+  background-color: #d70c53;
   height: 35vh;
   text-align: center;
+  padding-top: px;
+  /* width: 50vw; */
+  /* margin: auto; */
 }
 
 

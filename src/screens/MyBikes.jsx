@@ -71,6 +71,7 @@ class MyBikes extends React.Component {
         
 
         <div className="div_image3">
+          </div>
           <div className='div_text3'>   
             
             <h3>Click the button below to list a New Bike for Sale.</h3>
@@ -82,7 +83,7 @@ class MyBikes extends React.Component {
             <h3>Already have bike listed with us? Click on My Bikes to see all your listings.</h3>
 
           </div>
-        </div>
+      
 
 
         <Footer />
