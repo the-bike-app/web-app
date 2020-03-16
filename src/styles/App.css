@@ -10,6 +10,16 @@
   line-height: 30px;
 }
 
+body{
+  background-color: #6e6d6a;
+}
+
+.form-container{
+  background-color: white;
+}
+
+
+
 
 ul {
   text-align: right;
@@ -47,6 +57,18 @@ li {
   width: 100%;
 }
 
+.div_image3 {
+  background: url("../img/div3pic.jpg");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+
+
 .div_text{
   background-color: #fcba03;
   height: 50vh;
@@ -57,6 +79,17 @@ li {
   height: 40vh;
   text-align: center;
 }
+
+.div_text3{
+  /* background-color: #c75938; */
+  background-color: #d70c53;
+  height: 35vh;
+  text-align: center;
+  padding-top: px;
+  /* width: 50vw; */
+  /* margin: auto; */
+}
+
 
 h1{
   font-family: 'Ultra', serif;
@@ -75,7 +108,13 @@ h1{
 }
 
 h2{
-  padding: 50px 0 5px 0;
+  padding: 25px 0 5px 0;
+}
+
+
+h3{
+  padding: 40px;
+
 }
 
 .info{
@@ -117,6 +156,7 @@ button {
   color: black;
   text-shadow: none;
 }
+
 
 
 /* .container{

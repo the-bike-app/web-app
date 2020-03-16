@@ -1,6 +1,9 @@
 import React from 'react'
 import { deleteBike, getBikeById } from '../services/bikes'
-import { images} from '../services/constants'
+import { images } from '../services/constants'
+import Footer from '../components/shared/Footer'
+
+
 class MyBikes extends React.Component {
   constructor(props) {
     super(props)
@@ -19,13 +22,13 @@ class MyBikes extends React.Component {
   }
 
   renderBikes = () => {
-    
+
 
     if (this.state.bikes) {
 
       return this.state.bikes.map(bike => {
         let bikeImg = ''
-        bike.image ?  bikeImg = bike.image : bikeImg = images[bike.type]
+        bike.image ? bikeImg = bike.image : bikeImg = images[bike.type]
         return (
           <div className='bike' key={bike._id}>
             <div>Brand: {bike.brand}</div>
@@ -65,9 +68,27 @@ class MyBikes extends React.Component {
 
     return (
       <>
-        <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>New Bike</button>
-        <div>{this.renderBikes()}</div>
-      </>)
+        
+
+        <div className="div_image3">
+          </div>
+          <div className='div_text3'>   
+            
+            <h3>Click the button below to list a New Bike for Sale.</h3>
+            
+            <div className="buttons">
+              <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
+              <div>{this.renderBikes()}</div>
+            </div>  
+            <h3>Already have bike listed with us? Click on My Bikes to see all your listings.</h3>
+
+          </div>
+      
+
+
+        <Footer />
+      </>
+    )
   }
 }
 export default MyBikes

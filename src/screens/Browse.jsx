@@ -1,42 +1,88 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Footer from '../components/shared/Footer'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Browse(props) {
-  const showBikes = () => {
-    if (props.bikes) {
-      return props.bikes.map(bike => {
-        return (
-          <Link to = {`/bikes/${bike._id}`}>
-            <div className="item" key={bike._id}>
-              <h2>{bike.brand}</h2>
-              <p>{bike.type}</p>
-              <p>${bike.price}</p>
-              <p>{bike.location}</p>
-              <img src={bike.image} alt={bike.type} />
-            </div>
-          </Link>
-        )
-      })
-    } else {
-      return <p>No bikes</p>
+class Browse extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      bikes: '',
+      filter: ''
     }
   }
 
-  return (
+  searchBikes = (event) => {
+    this.setState({
+      filter: event.target.value
+    })
+  }
 
-    <>
-      <div className="browse-title">
-        <h1>Browse</h1>
-        <div className='bikes-container'>
-          {showBikes()}
+  showBikes = () => {
+
+    const { bikes, user } = this.props
+
+    return bikes.map(bike => {
+
+      const { _id, brand, type, price, location, image } = bike
+
+      if (user) {
+        return (
+          <Link to={`/bikes/${_id}`}>
+            <div className="item" key={_id}>
+              <h2>{brand}</h2>
+              <p>{type}</p>
+              <p>${price}</p>
+              <p>{location}</p>
+              <img src={image} alt={type} width='60px' height='60px' />
+            </div>
+          </Link>
+        )
+      } else {
+        return (
+          <Link to={`/sign-in`}>
+            <div className="item" key={_id}>
+              <h2>{brand}</h2>
+              <p>{type}</p>
+              <p>${price}</p>
+              <p>{location}</p>
+              <img src={image} alt={type} width='60px' height='60px' />
+            </div>
+          </Link>
+        )
+      }
+    })
+  }
+
+  render() {
+
+    const { searchBikes } = this
+    const { filter } = this.state
+
+    return (
+
+      <>
+        <div className="browse-title">
+
+          <h1>Browse</h1>
+
+          <input
+            onChange={searchBikes}
+            type='text'
+            name='search'
+            placeholder='Search Bikes'
+            value={filter}
+          />
+
+          <div className='bikes-container'>
+            {this.showBikes()}
+          </div>
+
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </>
+      </>
 
-
-  )
+    )
+  }
 }
 
 export default Browse

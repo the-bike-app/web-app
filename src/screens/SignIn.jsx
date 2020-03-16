@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { signInUser } from '../services/auth'
+import { Link } from 'react-router-dom'
 
 class SignIn extends Component {
   constructor() {
@@ -49,18 +50,21 @@ class SignIn extends Component {
         </button>
       )
     } else {
-      return <button type="submit">Sign In</button>
+      return <button type="submit">Click Here</button>
     }
   }
 
   render() {
+
     const { username, password } = this.state
 
     return (
       <div className="row">
         <div className="form-container">
+
           <h3>Sign In</h3>
           <form onSubmit={this.onSignIn}>
+
             <label>Username</label>
             <input
               required
@@ -70,6 +74,7 @@ class SignIn extends Component {
               placeholder="Enter Username"
               onChange={this.handleChange}
             />
+
             <label>Password</label>
             <input
               required
@@ -79,7 +84,13 @@ class SignIn extends Component {
               placeholder="Password"
               onChange={this.handleChange}
             />
+
             {this.renderError()}
+
+            <Link to={'/sign-up'}>
+              <h4>Dont have an account? <br /> Sign up here</h4>
+            </Link>
+
           </form>
         </div>
       </div>
