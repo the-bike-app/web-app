@@ -10,6 +10,16 @@
   line-height: 30px;
 }
 
+body{
+  background-color: black;
+}
+
+.form-container{
+  background-color: white;
+}
+
+
+
 
 ul {
   text-align: right;
@@ -131,6 +141,7 @@ button {
   color: black;
   text-shadow: none;
 }
+
 
 
 /* .container{

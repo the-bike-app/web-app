@@ -1,6 +1,9 @@
 import React from 'react'
 import { deleteBike, getBikeById } from '../services/bikes'
 import { images } from '../services/constants'
+import Footer from '../components/shared/Footer'
+
+
 class MyBikes extends React.Component {
   constructor(props) {
     super(props)
@@ -68,13 +71,17 @@ class MyBikes extends React.Component {
         
 
         <div className="div_image3">
-          <div className="buttons">
+          {/* try to style this div into a box or make the text white or something */}
+          <div className=''>   
+            <div className="buttons">
             <h3>Click here to List a New Bike for Sale</h3>
-          <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
+            <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
             <div>{this.renderBikes()}</div>
-          </div>  
-        </div>
+            </div>  
+          </div>
+      </div>
 
+        <Footer />
       </>
     )
   }
