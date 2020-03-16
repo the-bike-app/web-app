@@ -1,6 +1,6 @@
 import React from 'react'
 import { deleteBike, getBikeById } from '../services/bikes'
-import { images} from '../services/constants'
+import { images } from '../services/constants'
 class MyBikes extends React.Component {
   constructor(props) {
     super(props)
@@ -19,13 +19,13 @@ class MyBikes extends React.Component {
   }
 
   renderBikes = () => {
-    
+
 
     if (this.state.bikes) {
 
       return this.state.bikes.map(bike => {
         let bikeImg = ''
-        bike.image ?  bikeImg = bike.image : bikeImg = images[bike.type]
+        bike.image ? bikeImg = bike.image : bikeImg = images[bike.type]
         return (
           <div className='bike' key={bike._id}>
             <div>Brand: {bike.brand}</div>
@@ -65,9 +65,18 @@ class MyBikes extends React.Component {
 
     return (
       <>
-        <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>New Bike</button>
-        <div>{this.renderBikes()}</div>
-      </>)
+        
+
+        <div className="div_image3">
+          <div className="buttons">
+            <h3>Click here to List a New Bike for Sale</h3>
+          <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
+            <div>{this.renderBikes()}</div>
+          </div>  
+        </div>
+
+      </>
+    )
   }
 }
 export default MyBikes

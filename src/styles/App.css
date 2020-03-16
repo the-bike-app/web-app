@@ -47,6 +47,20 @@ li {
   width: 100%;
 }
 
+.div_image3 {
+  background: url("../img/div3pic.jpg");
+  min-height: 690px;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+
+
+
+
 .div_text{
   background-color: #fcba03;
   height: 50vh;
