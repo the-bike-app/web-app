@@ -20,7 +20,8 @@ class BikeEdit extends Component {
       },
       imagePreview: '',
       user: {},
-      updated: false
+      updated: false,
+      fieldsError: false
     }
   }
 
@@ -76,11 +77,14 @@ class BikeEdit extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-
-    updateBike(this.props.match.params.bikeid, { ...this.state.bike })
-      .then(() => this.setState({ updated: true }))
-      .catch(console.error)
+    if (this.bike.brand && this.bike.type && this.bike.location) {
+      updateBike(this.props.match.params.bikeid, { ...this.state.bike })
+        .then(() => this.setState({ updated: true }))
+        .catch(console.error)
+    }
+    else this.setState({fieldsError : true})
   }
+  
 
   render() {
    
