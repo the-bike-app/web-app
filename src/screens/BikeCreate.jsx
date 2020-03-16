@@ -104,6 +104,7 @@ class BikeCreate extends Component {
           handleSubmit={handleSubmit}
           cancelPath={`/users/${user}/bikes`}
           imagePreview={imagePreviewDiv}
+          selected='create'
         />
       </Layout>
     )
