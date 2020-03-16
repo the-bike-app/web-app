@@ -12,15 +12,14 @@ const Header = ({ user }) => {
       <NavLink to="/sign-out">Sign Out</NavLink>
     </div>
   )
-  
+
   const unauthenticatedOptions = (
     <div className="links">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/sign-up">Sign Up</NavLink>
       <NavLink to="/sign-in">Sign In</NavLink>
     </div>
   )
-  
+
   const alwaysOptions = (
     <div className="links">
       <NavLink to='/Browse'>Browse</NavLink>
@@ -35,9 +34,9 @@ const Header = ({ user }) => {
       {user ? authenticatedOptions : unauthenticatedOptions}
     </div>
   </Navbar>
-)
+  )
 }
 
-  
+
 
 export default Header
