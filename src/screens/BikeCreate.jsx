@@ -21,13 +21,22 @@ class BikeCreate extends Component {
         image: ''
       },
       createdBike: null,
-      imagePath: ''
+      imagePath: '',
+      imagePreview: ''
     }
   }
 
   handleUpload = (event) => {
     console.log(event.target.files[0])
     const image = event.target.files[0]
+    const reader = new FileReader()
+    
+    reader.onloadend = () => {
+      this.setState({
+        imagePreview: reader.result,
+      });
+    }
+    reader.readAsDataURL(image)
 
     const data = new FormData()
     data.append('file', image, image.name)
@@ -56,11 +65,18 @@ class BikeCreate extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     const res = await createBike(this.state.bike)
+    console.log(res.status)
     if (res.status === 201) {
+      console.log(res.data)
       this.props.addBike(res.data)
       this.setState({
         createdBike: res.data
       })
+    }
+    if (res.status === 200) {
+      console.log(res.data)
+      this.props.addBike(this.state.bike)
+      this.setState({createdBike: this.state.bike})
     }
   }
 
@@ -72,7 +88,11 @@ class BikeCreate extends Component {
     if (createdBike) {
       return <Redirect to={`/users/${user}/bikes`} />
     }
-
+    let {imagePreview} = this.state;
+    let imagePreviewDiv = null;
+    if (imagePreview) {
+      imagePreviewDiv = (<img src={imagePreview} />);
+    }
     return (
       <Layout>
         <BikeForm
@@ -83,6 +103,7 @@ class BikeCreate extends Component {
           handleUpload={handleUpload}
           handleSubmit={handleSubmit}
           cancelPath={`/users/${user}/bikes`}
+          imagePreview={imagePreviewDiv}
         />
       </Layout>
     )
