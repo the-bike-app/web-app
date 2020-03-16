@@ -19,8 +19,7 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
     <Route
       exact
       path="/"
-      // render={props => (user ? <Home /> : <Landing {...props} bikes={bikes} />)}
-      component={Landing}
+      render={props => <Landing {...props} user={user} bikes={bikes} />}
     />
 
     <Route
