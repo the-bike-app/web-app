@@ -29,9 +29,9 @@ export const signOut = async user => {
   }
 }
 
-export const changePassword = async (passwords, user) => {
+export const changePassword = async (credentials) => {
   try {
-    const resp = await api.post('/change-password')
+    const resp = await api.post('/change-password', credentials)
     return resp.data
   } catch (error) {
     throw error

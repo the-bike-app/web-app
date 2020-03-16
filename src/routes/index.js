@@ -11,6 +11,7 @@ import BikeCreate from '../screens/BikeCreate'
 import BikeEdit from '../screens/BikeEdit'
 import Browse from '../screens/Browse'
 import MyBikes from '../screens/MyBikes'
+import ChangePassword from '../screens/ChangePassword'
 import AuthenticatedRoute from './AuthenticatedRoute'
 const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
   <Switch>
@@ -54,6 +55,12 @@ const Routes = ({ user, bikes, setUser, clearUser, addBike }) => (
       path="/bikes/:id"
       user={user}
       render={props => <Bike {...props} />}
+    />
+    <AuthenticatedRoute
+      exact
+      path="/change-password"
+      user={user}
+      render={props => <ChangePassword {...props} user={user} />}
     />
     <AuthenticatedRoute
       exact
