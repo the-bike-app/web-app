@@ -22,28 +22,21 @@ class ChangePassword extends Component {
 
   onChangePassword = event => {
     event.preventDefault()
-
     const { alert, history, user } = this.props
     const id = user._id
     const credentials = { ...this.state, id }
-    console.log(credentials)
     changePassword(credentials)
-      .then(() =>
-        alert({
-          heading: 'Change Password Success',
-          message: 'Password was changed',
-          variant: 'success'
-        })
-      )
-      .then(() => history.push('/users/:id/bikes'))
-      .catch(error => {
+      // .then(() => (
+      //   alert('Password was changed!')
+      // )
+      .then(() => {
+        history.push('/users/:id/bikes')
+        window.alert('Your password was successfully changed!')
+      })
+      .catch((error) => {
         console.error(error)
         this.setState({ oldPassword: '', newPassword: '' })
-        alert({
-          heading: 'Change Password Failed',
-          message: 'Password Sucks,try again.',
-          variant: 'danger'
-        })
+        window.alert('Incorrect Old Password, Your password was not changed.')
       })
   }
 
