@@ -6,13 +6,14 @@ class Browse extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      bike: ''
+      bikes: '',
+      filter: ''
     }
   }
 
   searchBikes = (event) => {
-    this.setState ({
-      bike: event.target.value
+    this.setState({
+      filter: event.target.value
     })
   }
 
@@ -49,14 +50,13 @@ class Browse extends Component {
           </Link>
         )
       }
-
     })
   }
 
   render() {
 
     const { searchBikes } = this
-    const { bike } = this.state
+    const { filter } = this.state
 
     return (
 
@@ -70,7 +70,7 @@ class Browse extends Component {
             type='text'
             name='search'
             placeholder='Search Bikes'
-            value={bike}
+            value={filter}
           />
 
           <div className='bikes-container'>
