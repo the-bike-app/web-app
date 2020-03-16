@@ -10,21 +10,38 @@ class Browse extends Component {
 
   showBikes = () => {
 
-    const { bikes } = this.props
+    const { bikes, user } = this.props
 
     return bikes.map(bike => {
-      
-      return (
-        <Link to={`/bikes/${bike._id}`}>
-          <div className="item" key={bike._id}>
-            <h2>{bike.brand}</h2>
-            <p>{bike.type}</p>
-            <p>${bike.price}</p>
-            <p>{bike.location}</p>
-            <img src={bike.image} alt={bike.type} />
-          </div>
-        </Link>
-      )
+
+      const { _id, brand, type, price, location, image } = bike
+
+      if (user) {
+        return (
+          <Link to={`/bikes/${_id}`}>
+            <div className="item" key={_id}>
+              <h2>{brand}</h2>
+              <p>{type}</p>
+              <p>${price}</p>
+              <p>{location}</p>
+              <img src={image} alt={type} width='60px' height='60px' />
+            </div>
+          </Link>
+        )
+      } else {
+        return (
+          <Link to={`/sign-in`}>
+            <div className="item" key={_id}>
+              <h2>{brand}</h2>
+              <p>{type}</p>
+              <p>${price}</p>
+              <p>{location}</p>
+              <img src={image} alt={type} width='60px' height='60px' />
+            </div>
+          </Link>
+        )
+      }
+
     })
   }
 
@@ -40,7 +57,6 @@ class Browse extends Component {
           <Footer />
         </div>
       </>
-
 
     )
   }
