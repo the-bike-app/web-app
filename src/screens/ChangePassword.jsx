@@ -22,13 +22,10 @@ class ChangePassword extends Component {
 
   onChangePassword = event => {
     event.preventDefault()
-    const { alert, history, user } = this.props
+    const { history, user } = this.props
     const id = user._id
     const credentials = { ...this.state, id }
     changePassword(credentials)
-      // .then(() => (
-      //   alert('Password was changed!')
-      // )
       .then(() => {
         history.push('/users/:id/bikes')
         window.alert('Your password was successfully changed!')

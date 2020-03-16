@@ -27,7 +27,6 @@ class BikeCreate extends Component {
 
   handleUpload = (event) => {
     console.log(event.target.files[0])
-
     const image = event.target.files[0]
 
     const data = new FormData()
@@ -67,11 +66,11 @@ class BikeCreate extends Component {
 
   render() {
     const { handleChange, handleSubmit, handleUpload } = this
-    const { createdBike, bike, imagePath } = this.state
+    const { createdBike, bike, imagePath, user } = this.state
     const { history } = this.props
 
     if (createdBike) {
-      return <Redirect to={`/bikes`} />
+      return <Redirect to={`/users/${user}/bikes`} />
     }
 
     return (
@@ -83,7 +82,7 @@ class BikeCreate extends Component {
           handleChange={handleChange}
           handleUpload={handleUpload}
           handleSubmit={handleSubmit}
-          cancelPath={`/users/${this.state.user}/bikes`}
+          cancelPath={`/users/${user}/bikes`}
         />
       </Layout>
     )
