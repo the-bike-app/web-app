@@ -363,6 +363,11 @@ footer{
   margin-top: 0.6em;
 }
 
+.searchButton {
+  display: flex;
+  margin: auto;
+}
+
 
 @media (max-width: 600px) {
 
