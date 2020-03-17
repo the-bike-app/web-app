@@ -83,7 +83,6 @@ li {
 }
 
 .div_text3{
-  /* background-color: #c75938; */
   background-color: #d70c53;
   height: 35vh;
   text-align: center;
@@ -92,7 +91,6 @@ li {
 
 h1{
   font-family: 'Ultra', serif;
-  /* color: #fcba03; */
   color: white;
   text-align: center;
   letter-spacing: 0.75px;
@@ -244,8 +242,8 @@ footer{
   width: 275px;
   height: 275px;
   transition: 0.3s; 
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   box-shadow: 0 0px 0px 0 rgba(224, 224, 224, 0.671);
   position: relative;
 }
