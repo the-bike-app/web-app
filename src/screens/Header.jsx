@@ -7,7 +7,7 @@ import Navbar from '../components/shared/Navbar.jsx'
 const Header = ({ user }) => {
   const authenticatedOptions = (
     <div className="links">
-      {user && <NavLink to={`/users/${user._id}/bikes`}>My Bikes</NavLink>}
+      {user && <NavLink to={`/users/${user._id}/bikes`}>{user.username}'s Bikes</NavLink>}
       <NavLink to="/change-password">Change Password</NavLink>
       <NavLink to="/sign-out">Sign Out</NavLink>
     </div>
@@ -15,28 +15,35 @@ const Header = ({ user }) => {
 
   const unauthenticatedOptions = (
     <div className="links">
-      <NavLink to="/">Home</NavLink>
+      {/* <NavLink to="/">Home</NavLink> */}
 
-      {/* <NavLink to='/'>
-        <img src='https://i.imgur.com/YI3Pdn9.png' alt='Wheel Deal'  width='40px' height='70px'/>
-      </NavLink> */}
+      
 
       <NavLink to="/sign-in">Sign In</NavLink>
-    </div>
+      </div>
   )
 
   const alwaysOptions = (
+    <>
+    
     <div className="links">
       <NavLink to='/Browse'>Browse</NavLink>
     </div>
+    </>
   )
 
 
   return (<Navbar>
-    {user && <span className="navbar-text">Welcome, {user.username}</span>}
     <div className="nav">
-      {alwaysOptions}
-      {user ? authenticatedOptions : unauthenticatedOptions}
+      <div className ='navLogo'>
+        <NavLink to='/'>
+          <img src='https://i.imgur.com/YI3Pdn9.png' alt='Wheel Deal'/>
+        </NavLink>
+      </div>
+      <div className= 'leftNav'> 
+        {alwaysOptions}
+        {user ? authenticatedOptions : unauthenticatedOptions}
+      </div>
     </div>
   </Navbar>
   )

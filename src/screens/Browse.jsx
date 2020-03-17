@@ -46,14 +46,22 @@ class Browse extends Component {
         )
       } else {
         return (
-          <Link to={`/sign-in`}>
+          <Link to={`/sign-in`} style={{ textDecoration: 'none' }}>
             <div className="item" key={_id}>
-              <h2>{brand}</h2>
-              <p>{type}</p>
-              <p>${price}</p>
-              <p>{location}</p>
-              <img src={image} alt={type} width='60px' height='60px' />
-            </div>
+
+              
+              <img className="browse-image" src={image} alt={type} />
+            
+                <div className="browse-details">
+                  <h2>{brand}</h2>
+                  {/* <p>{type}</p> */}
+                  <p>${price}</p>
+                  <p>{location}</p>
+                </div>
+                
+            
+            </div>  
+                
           </Link>
         )
       }
