@@ -230,6 +230,8 @@ footer{
   border: 2px solid black;
   /* text-align: left; */
   text-decoration: none;
+  margin-bottom: 80px;
+  /* padding-bottom: 25px; */
   /* overflow-wrap: break-word; */
 }
 
@@ -246,10 +248,23 @@ footer{
   color: #fcba03;
   text-align: center;
   margin-top: 0;
+  background-color:  #8e897d;
 }
 
+.item .browse-details h2{
+  padding: 0;
+  color:#fcba03;
+
+
+}
+
+
 .item h2{
-  font-size: 15px;
+  font-size: 18px;
+}
+
+.item p{
+  font-size: 16px;
 }
 
 .bikes-container{
