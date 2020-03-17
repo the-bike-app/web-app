@@ -30,15 +30,21 @@ class MyBikes extends React.Component {
         let bikeImg = ''
         bike.image ? bikeImg = bike.image : bikeImg = images[bike.type]
         return (
-          <div className='bike' key={bike._id}>
-            <div>Brand: {bike.brand}</div>
-            <div>Type: {bike.type}</div>
-            <div>Location: {bike.location}</div>
-            <div>Description: {bike.description}</div>
-            <div>Price: {bike.price}</div>
-            <div>Picture: <img src={bikeImg} alt="bike" /></div>
-            <div className="buttons">
-              <button className="danger" value={bike._id} onClick={this.destroy}>Delete Bike</button>
+          <div className='myBikesLists' key={bike._id}>
+            <div className='myBikesAll'>
+              <div className='myBikesInfo'>
+                <div>Brand: <span className= "value" >{bike.brand}</span></div>
+                <div>Type: <span className= "value" >{bike.type}</span></div>
+                <div>Location: <span className= "value" >{bike.location}</span></div>
+                <div>Description: <span className= "value" >{bike.description}</span></div>
+                <div>Price: <span className= "value" >{bike.price}</span></div> 
+              </div>
+              <div className='myBikesPics'>
+                <img src={bikeImg} alt="bike" />
+              </div>
+            </div>
+            <div className="myBikesButtons">
+              <button value={bike._id} onClick={this.destroy}>Delete </button>
               <button
                 className="edit"
                 value={bike._id}
@@ -68,24 +74,12 @@ class MyBikes extends React.Component {
 
     return (
       <>
-        
-
-        <div className="div_image3">
-          </div>
-          <div className='div_text3'>   
-            
-            <h3>Click the button below to list a New Bike for Sale.</h3>
-            
-            <div className="buttons">
-              <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>Sell My Bike</button>
-              <div>{this.renderBikes()}</div>
-            </div>  
-            <h3>Already have bike listed with us? Click on My Bikes to see all your listings.</h3>
-
-          </div>
-      
-
-
+      <div className= 'myBikesPage'>
+        <div className="buttons sellMyBike">
+              <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>+ New Bike</button>
+        </div>  
+          <div className= 'allBikeCards'>{this.renderBikes()}</div>
+      </div>
         <Footer />
       </>
     )
