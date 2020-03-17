@@ -39,7 +39,6 @@ class Bike extends Component {
     const newState = !this.state.showForm
     this.setState({ showForm: newState })
     if (this.state.showForm) {
-      window.scrollby(0, 100)
     }
   }
 

@@ -91,7 +91,7 @@ class BikeCreate extends Component {
     let {imagePreview} = this.state;
     let imagePreviewDiv = null;
     if (imagePreview) {
-      imagePreviewDiv = (<img src={imagePreview} />);
+      imagePreviewDiv = (<div className ="imagePreview"><img src={imagePreview} /></div>);
     }
     return (
       <Layout>
