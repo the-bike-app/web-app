@@ -17,6 +17,7 @@ const admin = require("firebase-admin");
 // projectId: 'cool-bike-app',
 //   keyFilename: 'cool-bike-app-firebase-adminsdk-1m69p-4ababa68b5.json'
 // }
+
 admin.initializeApp(functions.config().firebase);
 const bucket = admin.storage().bucket();
 
