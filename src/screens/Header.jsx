@@ -1,6 +1,7 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import Navbar from '../components/shared/Navbar.jsx'
+import BurgerNav from './BurgerNav'
 
 
 const Header = ({ user }) => {
@@ -43,6 +44,13 @@ const Header = ({ user }) => {
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
       </div>
+      <div className = 'burgerNav'>
+        <BurgerNav user={user}
+          authenticatedOptions={authenticatedOptions}
+          unauthenticatedOptions={unauthenticatedOptions} 
+          alwaysOptions={alwaysOptions}/>
+      </div>
+      
     </div>
   </Navbar>
   )
