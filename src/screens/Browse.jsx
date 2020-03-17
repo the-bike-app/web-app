@@ -6,14 +6,21 @@ class Browse extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      bikes: '',
-      filter: ''
+      choice: '',
+      searchedBike: null
     }
   }
 
   searchBikes = (event) => {
     this.setState({
-      filter: event.target.value
+      choice: event.target.value
+    })
+  }
+
+  filterBikes = () => {
+    let filter = this.props.bikes.filter(bike => bike.brand === this.state.choice)
+    this.setState({
+      searchedBike: filter
     })
   }
 
@@ -63,8 +70,9 @@ class Browse extends Component {
 
   render() {
 
-    const { searchBikes } = this
-    const { filter } = this.state
+    const { bikes, user } = this.props
+    const { choice, searchedBike } = this.state
+    const { searchBikes, filterBikes } = this
 
     return (
 
@@ -77,18 +85,89 @@ class Browse extends Component {
             onChange={searchBikes}
             type='text'
             name='search'
-            placeholder='Search Bikes'
-            value={filter}
+            placeholder='Search By Brand'
+            value={choice}
           />
+          <button onClick={filterBikes}>search</button>
+
 
           <div className='bikes-container'>
-            {this.showBikes()}
+
+            {
+              searchedBike === null ?
+                (
+                  bikes.map(bike => {
+
+                    const { _id, brand, type, price, location, image } = bike
+
+                    if (user) {
+                      return (
+                        <Link to={`/bikes/${_id}`}>
+                          <div className="item" key={_id}>
+                            <h2>{brand}</h2>
+                            <p>{type}</p>
+                            <p>${price}</p>
+                            <p>{location}</p>
+                            <img src={image} alt={type} width='60px' height='60px' />
+                          </div>
+                        </Link>
+                      )
+                    } else {
+                      return (
+                        <Link to={`/sign-in`}>
+                          <div className="item" key={_id}>
+                            <h2>{brand}</h2>
+                            <p>{type}</p>
+                            <p>${price}</p>
+                            <p>{location}</p>
+                            <img src={image} alt={type} width='60px' height='60px' />
+                          </div>
+                        </Link>
+                      )
+                    }
+                  })
+                )
+                :
+                (
+
+                  searchedBike.map(bike => {
+
+                    const { _id, brand, type, price, location, image } = bike
+
+                    if (user) {
+                      return (
+                        <Link to={`/bikes/${_id}`}>
+                          <div className="item" key={_id}>
+                            <h2>{brand}</h2>
+                            <p>{type}</p>
+                            <p>${price}</p>
+                            <p>{location}</p>
+                            <img src={image} alt={type} width='60px' height='60px' />
+                          </div>
+                        </Link>
+                      )
+                    } else {
+                      return (
+                        <Link to={`/sign-in`}>
+                          <div className="item" key={_id}>
+                            <h2>{brand}</h2>
+                            <p>{type}</p>
+                            <p>${price}</p>
+                            <p>{location}</p>
+                            <img src={image} alt={type} width='60px' height='60px' />
+                          </div>
+                        </Link>
+                      )
+                    }
+                  })
+                )
+            }
           </div>
 
           <Footer />
+
         </div>
       </>
-
     )
   }
 }
