@@ -266,10 +266,7 @@ footer{
 .item .browse-details h2{
   padding: 0;
   color:#fcba03;
-
-
 }
-
 
 .item h2{
   font-size: 18px;
@@ -448,6 +445,20 @@ transition: all 2s ease;
   margin: auto;
 }
 
+.back-btn {
+  font-size: 30px;
+  color: white;
+}
+
+.back-btn:hover {
+  color: #fcba03
+}
+
+.offer-textbox {
+font-size: 30px;
+height: 300px;
+width: 500px
+}
 
 @media (max-width: 600px) {
 

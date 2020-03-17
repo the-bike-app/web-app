@@ -68,7 +68,7 @@ class Bike extends Component {
       <>
         <div className="bike">
           <Link to="/browse">
-            <span className='back'>&#60; Back</span>
+            <span className='back-btn'>&#60; Back</span>
           </Link>
           <div>Brand: {bike.brand}</div>
           <div>Type: {bike.type}</div>
@@ -81,7 +81,7 @@ class Bike extends Component {
         <button onClick={this.handleOffer}>Make An Offer</button>
         {showForm ?
           <form onSubmit={this.handleSubmit}>
-            <textarea className='offer-text-box' type='text' placeholder="Add a message to the seller here" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
+            <textarea className='offer-textbox' type='text' placeholder="Add a message to the seller here" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
             <button onClick={this.handleOffer}>Cancel</button>
             <button type='submit'>Send</button>
           </form>
