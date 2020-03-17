@@ -115,7 +115,7 @@ h1{
 }
 
 h2{
-  padding: 25px 0 5px 0;
+  padding: 25px 0 5px;
   text-decoration: none;
 }
 
@@ -230,8 +230,6 @@ footer{
   justify-content: space-evenly;
 }
 
-
-
 .item{
   background-color: white;
   font-size: 13px;
@@ -254,30 +252,23 @@ footer{
 }
 
 .browse-details{
-  font-size: 13px;
   font-family: serif;
-  padding: 0;
   color: #fcba03;
   text-align: center;
   margin-top: 0;
   background-color:  #8e897d;
-
 }
+
 
 .item .browse-details h2{
   padding: 0;
-  color:#fcba03;
-
-
+  color: #fcba03;
+  font-size: 17px;
 }
 
-
-.item h2{
-  font-size: 18px;
-}
 
 .item p{
-  font-size: 16px;
+  font-size: 14px;  
 }
 
 .bikes-container{

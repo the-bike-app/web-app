@@ -74,12 +74,12 @@ class Browse extends Component {
                         <Link to={`/sign-in`} style={{ textDecoration: 'none' }}>
                           <div className="item" key={_id}>
                             <img className="browse-image" src={image} alt={type} />
-                          </div>
-                          <div className="browse-details">
-                            <h2>{brand}</h2>
-                            <p>{type}</p>
-                            <p>${price}</p>
-                            <p>{location}</p>
+                            <div className="browse-details">
+                              <h2>{brand}</h2>
+                              <p>{type}</p>
+                              <p>${price}</p>
+                              <p>{location}</p>
+                            </div>
                           </div>
                         </Link>
                       )
