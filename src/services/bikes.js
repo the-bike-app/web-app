@@ -3,7 +3,6 @@ import api from './apiConfig'
 export const getBikes = async () => {
   try {
     const resp = await api.get('/bikes')
-    //console.log('Data:', resp.data.bikes)
     return await resp.data.bikes
   } catch (error) {
     throw error
@@ -13,8 +12,16 @@ export const getBikes = async () => {
 export const getBikeById = async (id) => {
   try {
     const resp = await api.get(`/bikes/${id}`)
-    //console.log('Data:', resp.data)
     return await resp.data.bike
+  } catch (error) {
+    throw error
+  }
+}
+
+export const sendOffer = async (offer) => {
+  try {
+    const resp = await api.post('/send-offer', offer)
+    return resp.data
   } catch (error) {
     throw error
   }
