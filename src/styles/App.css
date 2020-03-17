@@ -11,13 +11,20 @@
 }
 
 body{
-  background-color: #6e6d6a;
+  background-color: #8e897d;
 }
 
 .form-container{
   background-color: white;
 }
 
+
+input{
+  display: block;
+  margin: 0 auto;
+  padding: 3px;
+  margin-bottom: 10px;
+}
 
 
 
@@ -116,9 +123,15 @@ h3{
   padding: 40px;
 
 }
+h4{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
 
 .info{
-  padding: 75px;
+  padding: 60px;
   font-size: 22px;
   text-align:center;
 }
@@ -142,14 +155,16 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  /* position: relative; */
-  /* margin: 0 40px;  */
+  position: relative;
+  
 }
 
 .buttons{
   display:flex;
   justify-content: center;
 }
+
+
 
 .browse-title h1{
   font-size: 2.5em;
@@ -217,7 +232,7 @@ footer{
 }
 
 .bikes-container{
-  background-color: white;
+  background-color:  #8e897d;
   display:flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -244,7 +259,7 @@ footer{
 }
 
 .form-container .danger {
-  background: #e57373;
+  background: #e40909;
 }
 
 .form-container h3 {
