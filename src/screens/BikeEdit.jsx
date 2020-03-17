@@ -94,12 +94,11 @@ class BikeEdit extends Component {
     let {imagePreview} = this.state;
     let imagePreviewDiv = null;
     if (imagePreview) {
-      imagePreviewDiv = (<img src={imagePreview} />);
+      imagePreviewDiv = (<div className="imagePreview"><img src={imagePreview} /></div>);
     }
 
     return (
       <>
-        <div>Hello</div>
         <BikeForm
           history={history}
           bike={bike}
@@ -109,9 +108,6 @@ class BikeEdit extends Component {
           cancelPath={`/users/${this.props.user._id}/bikes`}
           imagePreview={imagePreviewDiv}
         />
-        <div className ='buttons'>
-          <button className="danger" onClick={this.destroy}>Delete Bike</button>
-        </div>
       </>
     )
   }

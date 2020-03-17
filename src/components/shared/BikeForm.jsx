@@ -54,16 +54,16 @@ const BikeForm = ({
             required
             onChange={handleChange}
           />
-          <label>Image</label>
-          {imagePreview}
+        <label>Image</label>
+        {imagePreview}
           <input
             type='file'
             value={imagePath}
             name='image'
             onChange={handleUpload}
           />
-          <button type='submit'>Submit</button>
-          <button className='danger' onClick={() => history.push(cancelPath)}>Cancel</button>
+          <button className ='bikeFormButton' type='submit'>Submit</button>
+          <button className= 'bikeFormButton' onClick={() => history.push(cancelPath)}>Cancel</button>
         </form>
       </div>
   )

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import Navbar from '../components/shared/Navbar.jsx'
 
 
-
 const Header = ({ user }) => {
   const authenticatedOptions = (
     <div className="links">
