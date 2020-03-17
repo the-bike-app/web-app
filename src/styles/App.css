@@ -552,14 +552,16 @@ margin:0 auto;
 .bike-card {
 border: 5px solid #fcba03;
 background-color: white;
-height: 700px;
+height: 720px;
 width: 80%;
 color: #8e897d;
 font-size: 20px;
 margin: 0 auto;
+padding: 20px;
 }
 
 .bike-card img{
+  border: 5px solid #fcba03; 
   height: 350px;
   margin: 50px 250px;
 }
@@ -569,16 +571,19 @@ margin: 0 auto;
 }
 
 .offer-textbox {
+margin: 10px;
 font-size: 30px;
 height: 300px;
 width: 500px
 }
 
 .offer-btn {
-  margin: 0 350px;
+  margin: 0 425px;
 }
 
-
+.cancel-btn, .send-btn {
+  margin: 10px;
+}
 
 @media (max-width: 600px) {
 

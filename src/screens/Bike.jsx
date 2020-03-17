@@ -78,16 +78,16 @@ class Bike extends Component {
             <div>Type: {bike.type}</div>
             <div>Location: {bike.location}</div>
             <div>Description: <p>{bike.description}</p></div>
-            <div>Price: {bike.price}</div>
+            <div>Price: ${bike.price}.00</div>
             <img src={bikeImg} alt="bike" /><br />
             <button className='offer-btn' onClick={this.handleOffer}>Make An Offer</button>
           </div>
           <div className='bike-offer'>
             {showForm ?
               <form onSubmit={this.handleSubmit}>
-                <textarea className='offer-textbox' type='text' placeholder="Add a message to the seller here" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
-                <button onClick={this.handleOffer}>Cancel</button>
-                <button type='submit'>Send</button>
+                <textarea className='offer-textbox' type='text' placeholder="Send A Message To The Seller!" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
+                <button className='cancel-btn' onClick={this.handleOffer}>Cancel</button>
+                <button className='send-btn' type='submit'>Send</button>
               </form>
               :
               ''
