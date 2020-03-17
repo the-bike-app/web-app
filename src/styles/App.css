@@ -454,10 +454,39 @@ transition: all 2s ease;
   color: #fcba03
 }
 
+.bike-page {
+display: flex;
+flex-direction: column;
+margin:0 auto;
+}
+
+.bike-card {
+border: 5px solid #fcba03;
+background-color: white;
+height: 700px;
+width: 80%;
+color: #8e897d;
+font-size: 20px;
+margin: 0 auto;
+}
+
+.bike-card img{
+  height: 350px;
+  margin: 50px 250px;
+}
+
+.bike-offer {
+margin: 0 auto;
+}
+
 .offer-textbox {
 font-size: 30px;
 height: 300px;
 width: 500px
+}
+
+.offer-btn {
+  margin: 0 350px;
 }
 
 @media (max-width: 600px) {

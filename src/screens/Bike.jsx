@@ -38,6 +38,9 @@ class Bike extends Component {
     this.setState({ message: '' })
     const newState = !this.state.showForm
     this.setState({ showForm: newState })
+    if (this.state.showForm) {
+      window.scrollby(0, 100)
+    }
   }
 
   handleSubmit = async (event) => {
@@ -66,28 +69,32 @@ class Bike extends Component {
     bike.image ? bikeImg = bike.image : bikeImg = images[bike.type]
     return (
       <>
-        <div className="bike">
-          <Link to="/browse">
-            <span className='back-btn'>&#60; Back</span>
-          </Link>
-          <div>Brand: {bike.brand}</div>
-          <div>Type: {bike.type}</div>
-          <div>Location: {bike.location}</div>
-          <div>Description: {bike.description}</div>
-          <div>Price: {bike.price}</div>
-          <div>Picture: <img src={bikeImg} alt="bike" /></div>
-          <div>Seller: {user.username}</div>
+        <Link to="/browse">
+          <span className='back-btn'>&#60; Back</span>
+        </Link>
+        <div className="bike-page">
+          <div className='bike-card'>
+            <div>This Bike Is Sold By: {user.username}</div>
+            <div>Brand: {bike.brand}</div>
+            <div>Type: {bike.type}</div>
+            <div>Location: {bike.location}</div>
+            <div>Description: <p>{bike.description}</p></div>
+            <div>Price: {bike.price}</div>
+            <img src={bikeImg} alt="bike" /><br />
+            <button className='offer-btn' onClick={this.handleOffer}>Make An Offer</button>
+          </div>
+          <div className='bike-offer'>
+            {showForm ?
+              <form onSubmit={this.handleSubmit}>
+                <textarea className='offer-textbox' type='text' placeholder="Add a message to the seller here" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
+                <button onClick={this.handleOffer}>Cancel</button>
+                <button type='submit'>Send</button>
+              </form>
+              :
+              ''
+            }
+          </div>
         </div>
-        <button onClick={this.handleOffer}>Make An Offer</button>
-        {showForm ?
-          <form onSubmit={this.handleSubmit}>
-            <textarea className='offer-textbox' type='text' placeholder="Add a message to the seller here" name='message' value={message} onChange={this.handleChange} maxLength='500' /><br />
-            <button onClick={this.handleOffer}>Cancel</button>
-            <button type='submit'>Send</button>
-          </form>
-          :
-          ''
-        }
       </>
     )
   }
