@@ -312,6 +312,7 @@ footer{
 }
 
 .form-container form {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -321,7 +322,7 @@ footer{
 
 .form-container form input {
   width: 100%;
-  padding: 0.6em 1em;
+  padding: 0.6em 0;
   margin: 0.5em auto;
   font-size: 1rem;
   border-radius: 3px;
@@ -335,7 +336,7 @@ footer{
   border: 2px solid #82ada9;
 }
 
-.form-container form input:valid {
+.form-container form input:valid, .dropSelect:valid {
   border: 2px solid #66bb6a;
 }
 
@@ -348,7 +349,8 @@ footer{
 }
 
 .form-container form button:hover {
-  box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
+ box-shadow: 3px 8px 16px rgba(0, 0, 0, 0.5);
+
 }
 
 .form-container form a {
@@ -414,17 +416,22 @@ footer{
   align-items: center;
   justify-content: space-between;
   padding: 2% 0 0 0;
+  height: 5vw;
 }
 .myBikesButtons button {
 font-size: 1.8vw;
 width: 45%;
-color: white;
-border: 4px solid #fcba03;
-background-color: #8e897d;
+height: 80%;
+background: #fcba03;
+border: none;
+color: #000;
 border-radius: 3px;
-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-transition: all 2s ease;
+padding: 0;
 }
+.myBikesButtons button:hover {
+box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 .sellMyBike{
 width: 55vw;
 margin: 4vh 0 2vh 0;
@@ -443,6 +450,36 @@ transition: all 2s ease;
 .searchButton {
   display: flex;
   margin: auto;
+}
+.dropSelect {
+  height: 5vh;
+  background-color: white;
+  border: 2px solid #8e897d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  width: 100%;
+  padding: 0.6em 0;
+  margin: 0.5em auto;
+  font-size: 1rem;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.4s ease;
+}
+.imagePreview {
+  display:flex;
+  width: 100%;
+  height: 17vw;
+  justify-content: center;
+  align-items: center;
+} 
+.imagePreview img {
+  border: 5px solid #fcba03;
+  border-radius: 6px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 2s ease;
+  width: 15vw;
+  height: 15vw;
+  object-fit: cover;
 }
 
 .back-btn {
@@ -512,6 +549,9 @@ width: 500px
 
   .links a {
     margin: 12px !important;
+  }
+  .myBikesButtons button {
+    border: 2px solid #fcba03;
   }
 
 
