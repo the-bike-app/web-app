@@ -68,7 +68,7 @@ class Bike extends Component {
     bike.image ? bikeImg = bike.image : bikeImg = images[bike.type]
     return (
       <>
-        <Link to="/browse">
+        <Link className='back-link' to="/browse">
           <span className='back-btn'>&#60; Back</span>
         </Link>
         <div className="bike-page">
