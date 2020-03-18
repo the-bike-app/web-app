@@ -29,7 +29,6 @@ class Bike extends Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target.value)
     const updatedState = { [event.target.name]: event.target.value }
     this.setState(updatedState)
   }
