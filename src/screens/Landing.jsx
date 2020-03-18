@@ -6,4 +6,5 @@ const Landing = (props) => (
     <Bikes {...props} />
   </div>
 )
+
 export default Landing

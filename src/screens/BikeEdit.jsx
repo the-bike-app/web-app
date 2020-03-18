@@ -24,19 +24,18 @@ class BikeEdit extends Component {
     }
   }
 
-
   async componentDidMount() {
     try {
       const bike = await getBikeById(this.props.match.params.bikeid)
       this.setState({ bike })
-      this.setState({imagePreview: bike.image})
+      this.setState({ imagePreview: bike.image })
     } catch (err) {
       console.error(err)
     }
   }
 
   handleChange = event => {
-    console.log(event.target.value)
+
     const updatedField = { [event.target.name]: event.target.value }
 
     const editedBike = Object.assign(this.state.bike, updatedField)
@@ -44,9 +43,8 @@ class BikeEdit extends Component {
     this.setState({ bike: editedBike })
   }
   handleUpload = (event) => {
-    console.log(event.target.files[0])
 
-    const image = event.target.files[0]  
+    const image = event.target.files[0]
     const reader = new FileReader()
     reader.onloadend = () => {
       this.setState({
@@ -73,17 +71,15 @@ class BikeEdit extends Component {
     })
   }
 
-
   handleSubmit = event => {
     event.preventDefault()
-      updateBike(this.props.match.params.bikeid, { ...this.state.bike })
-        .then(() => this.setState({ updated: true }))
-        .catch(console.error)
+    updateBike(this.props.match.params.bikeid, { ...this.state.bike })
+      .then(() => this.setState({ updated: true }))
+      .catch(console.error)
   }
-  
 
   render() {
-   
+
     const { bike, updated } = this.state
     const { handleChange, handleSubmit } = this
     const { history } = this.props
@@ -91,7 +87,7 @@ class BikeEdit extends Component {
     if (updated) {
       return <Redirect to={`/users/${this.props.user._id}/bikes`} />
     }
-    let {imagePreview} = this.state;
+    let { imagePreview } = this.state;
     let imagePreviewDiv = null;
     if (imagePreview) {
       imagePreviewDiv = (<div className="imagePreview"><img src={imagePreview} /></div>);
@@ -112,4 +108,5 @@ class BikeEdit extends Component {
     )
   }
 }
+
 export default BikeEdit

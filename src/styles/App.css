@@ -712,8 +712,6 @@ width: 500px
 
   h1{
     font-family: 'Ultra', serif;
-
-    /* color: #fcba03; */
     color: white;
     text-align: center;
     letter-spacing: 0.75px;
@@ -764,5 +762,3 @@ width: 500px
 
 @media (max-width: 800px) {
 }
-
-

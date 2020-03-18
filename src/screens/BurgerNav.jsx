@@ -1,8 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
 import { slide as Menu } from 'react-burger-menu';
-
-
 
 class BurgerNav extends React.Component {
   constructor(props) {
@@ -38,27 +35,20 @@ class BurgerNav extends React.Component {
 
   render() {
 
-
     return (
 
-     
-      <div onClick={()=> this.closeMenu()}>
-         <Menu noTransition right disableAutoFocus isOpen={this.state.menuOpen} customOnKeyDown={this.closeAllMenusOnEsc} 
-          onStateChange={(state) => { this.handleStateChange(state) }} onClick={()=> this.closeMenu()}>
-             <div className= 'menu-items' > 
-              {this.props.alwaysOptions}
-        {this.props.user ? this.props.authenticatedOptions : this.props.unauthenticatedOptions}
-      </div>
+      <div onClick={() => this.closeMenu()}>
+        <Menu noTransition right disableAutoFocus isOpen={this.state.menuOpen} customOnKeyDown={this.closeAllMenusOnEsc}
+          onStateChange={(state) => { this.handleStateChange(state) }} onClick={() => this.closeMenu()}>
+          <div className='menu-items' >
+            {this.props.alwaysOptions}
+            {this.props.user ? this.props.authenticatedOptions : this.props.unauthenticatedOptions}
+          </div>
         </Menu>
-       </div>
-       
-     
-
-
+      </div>
 
     )
   }
 }
-
 
 export default BurgerNav

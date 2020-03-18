@@ -11,18 +11,17 @@ class MyBikes extends React.Component {
       bikes: []
     }
   }
+
   componentDidMount = () => {
     if (this.state.bikes.length < 1) {
       this.props.user.users_bikes.map(async (bike) => {
         const response = await getBikeById(bike)
-        console.log(response)
         this.setState(prevState => ({ bikes: [...prevState.bikes, response] }))
       })
     }
   }
 
   renderBikes = () => {
-
 
     if (this.state.bikes) {
 
@@ -33,11 +32,11 @@ class MyBikes extends React.Component {
           <div className='myBikesLists' key={bike._id}>
             <div className='myBikesAll'>
               <div className='myBikesInfo'>
-                <div>Brand: <span className= "value" >{bike.brand}</span></div>
-                <div>Type: <span className= "value" >{bike.type}</span></div>
-                <div>Location: <span className= "value" >{bike.location}</span></div>
-                <div>Description: <span className= "value" >{bike.description}</span></div>
-                <div>Price: <span className= "value" >{bike.price}</span></div> 
+                <div>Brand: <span className="value" >{bike.brand}</span></div>
+                <div>Type: <span className="value" >{bike.type}</span></div>
+                <div>Location: <span className="value" >{bike.location}</span></div>
+                <div>Description: <span className="value" >{bike.description}</span></div>
+                <div>Price: <span className="value" >{bike.price}</span></div>
               </div>
               <div className='myBikesPics'>
                 <img src={bikeImg} alt="bike" />
@@ -62,6 +61,7 @@ class MyBikes extends React.Component {
       return null
     }
   }
+
   destroy = (e) => {
     deleteBike(e.target.value)
       .then(() => {
@@ -70,19 +70,21 @@ class MyBikes extends React.Component {
       })
       .catch(console.error)
   }
+
   render() {
 
     return (
       <>
-      <div className= 'myBikesPage'>
-        <div className="buttons sellMyBike">
-              <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>+ New Bike</button>
-        </div>  
-          <div className= 'allBikeCards'>{this.renderBikes()}</div>
-      </div>
+        <div className='myBikesPage'>
+          <div className="buttons sellMyBike">
+            <button className="edit" onClick={() => this.props.history.push(`/users/${this.props.user._id}/create`)}>+ New Bike</button>
+          </div>
+          <div className='allBikeCards'>{this.renderBikes()}</div>
+        </div>
         <Footer />
       </>
     )
   }
 }
+
 export default MyBikes

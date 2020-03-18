@@ -13,7 +13,6 @@ class UploadPhoto extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
   }
 
   handleImageChange(e) {
@@ -28,12 +27,11 @@ class UploadPhoto extends React.Component {
         imagePreviewUrl: reader.result,
       });
     }
-
     reader.readAsDataURL(file)
   }
 
   render() {
-    let {imagePreviewUrl} = this.state;
+    let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl} />);
@@ -49,7 +47,6 @@ class UploadPhoto extends React.Component {
       </div>
     )
   }
-
 }
 
 export default UploadPhoto
