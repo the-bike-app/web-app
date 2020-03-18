@@ -1,9 +1,10 @@
 import React from 'react'
-import Items from './Items'
+import Bikes from './Bikes'
 
 const Landing = (props) => (
-    <div className='container landing'>
-        <Items {...props} />
-    </div>
+  <div className='container landing'>
+    <Bikes {...props} />
+  </div>
 )
+
 export default Landing
