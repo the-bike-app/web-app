@@ -41,7 +41,8 @@ class Browse extends Component {
     console.log(filter3)
     if (this.props.user) {
       return (<>{filter3.map(bike => {
-        return <Link to={`/bikes/${bike._id}`}>
+        return <div className='browse-bike-div'>
+          <Link to={`/bikes/${bike._id}`}>
           <div className="item" key={bike._id}>
             <img className="browse-image" src={bike.image} alt={bike.type} />
           </div>
@@ -51,7 +52,8 @@ class Browse extends Component {
             <p>${bike.price}</p>
             <p>{bike.location}</p>
           </div>
-        </Link>
+          </Link>
+          </div>
       })}</>)
     }
     else {
