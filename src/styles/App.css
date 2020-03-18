@@ -209,18 +209,43 @@ footer{
   color: white;
 }
 
+/* .item{
+  background-color: white;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  margin: 20px;
+  width: 275px;
+  height: 275px;
+  border: 2px solid black; */
+  /* text-align: left; */
+  /* text-decoration: none; */
+  /* padding-bottom: 25px; */
+  /* overflow-wrap: break-word; */
+/* } */
+.browse-bike-div{
+  position: relative;
+}
+.browse-bike-div a{
+ color: transparent;
+}
 .browse-image{
   object-fit: cover;
   width: 275px;
   height: 275px;
   border: 2px solid black;
+  z-index: 1;
 }
 
 .browse-details {
-  display: none;
+  display: block;
   position: absolute;
   z-index: 2;
   top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   font-family: 'serif';
   text-align: center;
   pointer-events: none;
@@ -231,8 +256,9 @@ footer{
   transition: opacity 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95)
 }
 
-.browse-image:hover + .browse-details  {
-  display: block;
+.browse-bike-div a:hover  {
+  color: #fcba03;
+  transition: cubic-bezier(0.445, 0.05, 0.55, 0.95)
 }
 
 .item {
@@ -442,10 +468,21 @@ border-radius: 3px;
 box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
 transition: all 2s ease;
 }
-
 .searchButton {
   display: flex;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+}
+.searchButton button{
+  font-size: 2vw;
+  width: 20%;
+  color: white;
+  border: 4px solid white;
+  background-color: #fcba03;
+  border-radius: 3px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .dropSelect {
@@ -533,6 +570,15 @@ width: 500px
   margin: 10px;
 }
 
+.browseDropdowns {
+  margin: 1% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+} 
+
 .burgerNav {
   display: none
 }
@@ -585,6 +631,16 @@ width: 500px
 
   .myBikesButtons button {
     border: 2px solid #fcba03;
+  }
+  .browseDropdowns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  } 
+  .dropSelect {
+    font-size: medium;
+    padding: 0;
   }
   .burgerNav {
     display: flex

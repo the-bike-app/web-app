@@ -17,15 +17,27 @@ class Dropdown extends React.Component {
      })
   }
   render() {
-    const {listName } = this.props
+    const {listName, selected } = this.props
     let blankDiv = ''
-    this.props.selected === 'create' ? blankDiv = (<></>) : blankDiv = (<option selected disabled value="" className= 'dropChoice'> -- select an option -- </option>)
-
+    let req = selected === 'none' ? '' : '*'
+  
+    switch (this.props.selected) {
+      case 'create':
+        blankDiv= (<></>)
+        break;
+        case 'none':
+        blankDiv = (<option selected  value="" className= 'dropChoice'>none</option>)
+        break;
+      default:
+        blankDiv = (<option selected disabled value="" className= 'dropChoice'> -- select an option -- </option>)
+        break;
+    }
     return (
+     
       <>
-      <label>{listName.charAt(0).toUpperCase() + listName.slice(1)}*</label>
+        <label>{listName.charAt(0).toUpperCase() + listName.slice(1)}{req}</label>
         <select className= 'dropSelect'required name={listName} onChange={this.props.handleChange}>
-        {blankDiv}
+          {blankDiv}
         {this.renderList()}
         </select>
       </>
