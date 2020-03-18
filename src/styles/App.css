@@ -538,11 +538,16 @@ margin:0 auto;
 border: 5px solid #fcba03;
 background-color: white;
 height: 750px;
-width: 80%;
+width: 70%;
 color: #8e897d;
 font-size: 20px;
 margin: 0 auto;
 padding: 20px;
+}
+
+.img-offer {
+  display: flex;
+  flex-direction: row;
 }
 
 .bike-card img{
@@ -552,7 +557,7 @@ padding: 20px;
 }
 
 .bike-offer {
-margin: 0 auto;
+margin: 35px auto;
 }
 
 .offer-textbox {
