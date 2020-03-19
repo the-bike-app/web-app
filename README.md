@@ -1,6 +1,6 @@
 # The Bike App
 ### A responsive web app, with a React front-end and a MongoDB backend w/ Express Server. The front-end will be deployed on Surge.sh, and the back-end will be deployed with Atlas. 
-![](https://www.dwilliamzero.com/zero-cloud/WheelDeal.gif)
+![](https://dwilliamzero.com/zero-cloud/WheelDeal.gif)
 ![](https://www.dwilliamzero.com/zero-cloud/bike-app-mockup.png)
 
 ## **Description:**
